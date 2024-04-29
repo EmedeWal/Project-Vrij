@@ -4,16 +4,22 @@ using System;
 
 public class PlayerManager : MonoBehaviour
 {
-    public event Action<Vector2> MovementInput;
+    public event Action<Vector2> MovementInputValue;
     public event Action<Vector2> RotationInput;
+    public event Action<Vector2> RotationInputValue;
 
     public void OnMovementInput(InputAction.CallbackContext context)
     {
-        MovementInput?.Invoke(context.ReadValue<Vector2>());
+        MovementInputValue?.Invoke(context.ReadValue<Vector2>());
     }
 
     public void OnRotationInput(InputAction.CallbackContext context)
     {
         RotationInput?.Invoke(context.ReadValue<Vector2>());
+    }
+
+    public void OnMouseDeltaInput(InputAction.CallbackContext context)
+    {
+        RotationInputValue?.Invoke(context.ReadValue<Vector2>());
     }
 }

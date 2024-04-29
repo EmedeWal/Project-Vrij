@@ -20,12 +20,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerManager.MovementInput += PlayerMovement_MoveInputPerformed;
+        _playerManager.MovementInputValue += PlayerMovement_MoveInputPerformed;
     }
 
     private void OnDisable()
     {
-        _playerManager.MovementInput -= PlayerMovement_MoveInputPerformed;
+        _playerManager.MovementInputValue -= PlayerMovement_MoveInputPerformed;
     }
     private void Update()
     {
