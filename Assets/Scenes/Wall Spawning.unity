@@ -1229,8 +1229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88556e418889a1a4f8ecb2e9d0ad5cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSensitivity: 125
-  _verticalSensitivity: 125
+  _horizontalSensitivity: 70
+  _verticalSensitivity: 70
   _verticalClamp: 70
   _playerCamera: {fileID: 963194228}
 --- !u!114 &381305456
