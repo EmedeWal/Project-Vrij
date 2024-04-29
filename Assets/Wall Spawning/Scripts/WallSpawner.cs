@@ -33,18 +33,22 @@ public class WallSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(_spawnCD);
 
+            ManageVariables();
             CheckConditions();
+            SpawnWall();
         }
+    }
+
+    private void ManageVariables()
+    {
+        _spawnDistance -= _spawnDistanceSubtraction;
+        _spawnCD -= _spawnCDSubstraction;
+        _spawnCount--;
     }
 
     private void CheckConditions()
     {
-        //_spawnDistance -= _spawnDistanceSubtraction;
-        //_spawnCD -= _spawnCDSubstraction;
-
-        //if (_spawnDistance < 0) Destroy(_target.gameObject);
-
-        SpawnWall();
+        if (_spawnCount <= 0) Destroy(_target.gameObject);
     }
 
     private void SpawnWall()
