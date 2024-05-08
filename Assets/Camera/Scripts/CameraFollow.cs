@@ -2,13 +2,22 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
+    private Transform _target;
+
+    [Header("Distance to target")]
     [SerializeField] private Vector3 _offset;
 
-    //private void Awake()
-    //{
-    //    _target = GameObject.FindGameObjectWithTag("Player").transform;
-    //}
+    [Header("Lower value is more smoothing")]
+    [SerializeField] private float _smoothTime;
+
+    private void Awake()
+    {
+        // Seek the player
+        _target = GameObject.FindGameObjectWithTag("Player").transform;
+
+        // If player could not be found, destroy this script
+        if (_target == null) Destroy(this);
+    }
 
     private void Start()
     {
@@ -17,13 +26,10 @@ public class CameraFollow : MonoBehaviour
 
     private void Update()
     {
-        if (_target != null)
-        {
-            Vector3 targetPosition = _target.position + _offset;
+        Vector3 currentPos = transform.position;
+        Vector3 targetPos = _target.position + _offset;
+        float smoothing = _smoothTime * Time.deltaTime;
 
-            transform.SetPositionAndRotation(targetPosition, _target.rotation);
-            //transform.position = Vector3.Lerp(transform.position, targetPosition, _smoothTime);
-            //transform.rotation = Quaternion.Lerp(transform.rotation, _target.rotation, _smoothTime);
-        }
+        transform.SetPositionAndRotation(Vector3.Lerp(currentPos, targetPos, smoothing), Quaternion.Lerp(transform.rotation, _target.rotation, smoothing));
     }
 }

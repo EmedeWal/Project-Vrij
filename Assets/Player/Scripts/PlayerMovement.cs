@@ -5,8 +5,9 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController _characterController;
     private PlayerManager _playerManager;
 
-    [Header("VARIABLES")]
     [SerializeField] private float _movementSpeed = 15;
+
+    [Header("Higher value results in more movement smoothing")]
     [SerializeField] private float _smoothTime = 0.25f;
     private float _movementValue;
     private float _smoothMovement;
