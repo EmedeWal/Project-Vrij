@@ -2,22 +2,14 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    private Transform _target;
+    [Header("Target to follow")]
+    [SerializeField] private Transform _target;
 
     [Header("Distance to target")]
     [SerializeField] private Vector3 _offset;
 
     [Header("Lower value is more smoothing")]
     [SerializeField] private float _smoothTime;
-
-    private void Awake()
-    {
-        // Seek the player
-        _target = GameObject.FindGameObjectWithTag("Player").transform;
-
-        // If player could not be found, destroy this script
-        if (_target == null) Destroy(this);
-    }
 
     private void Start()
     {

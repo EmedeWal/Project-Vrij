@@ -1,14 +1,15 @@
 using UnityEngine;
 
+[RequireComponent (typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController _characterController;
-    private PlayerManager _playerManager;
+    private PlayerInputManager _inputManager;
 
     [SerializeField] private float _movementSpeed = 15;
 
     [Header("Higher value results in more movement smoothing")]
-    [SerializeField] private float _smoothTime = 0.25f;
+    [SerializeField] private float _smoothTime = 10;
     private float _movementValue;
     private float _smoothMovement;
     private float _smoothVelocity;
@@ -16,18 +17,19 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
-        _playerManager = GetComponent<PlayerManager>();
+        _inputManager = GetComponent<PlayerInputManager>();
     }
 
     private void OnEnable()
     {
-        _playerManager.MovementInputValue += PlayerMovement_MoveInputPerformed;
+        _inputManager.MovementInputValue += PlayerMovement_MoveInputPerformed;
     }
 
     private void OnDisable()
     {
-        _playerManager.MovementInputValue -= PlayerMovement_MoveInputPerformed;
+        _inputManager.MovementInputValue -= PlayerMovement_MoveInputPerformed;
     }
+
     private void Update()
     {
         Move();
@@ -46,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         float targetMovement = _movementValue * _movementSpeed;
-        _smoothMovement = Mathf.SmoothDamp(_smoothMovement, targetMovement, ref _smoothVelocity, _smoothTime);
+        _smoothMovement = Mathf.SmoothDamp(_smoothMovement, targetMovement, ref _smoothVelocity, _smoothTime * Time.deltaTime);
 
         _characterController.Move(_smoothMovement * Time.deltaTime * transform.forward);
     }

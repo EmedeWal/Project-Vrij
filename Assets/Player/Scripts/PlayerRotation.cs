@@ -3,23 +3,23 @@ using UnityEngine;
 public class PlayerRotation : MonoBehaviour
 {
     [SerializeField] private float _rotationSpeed = 10;
-    private PlayerManager _playerManager;
+    private PlayerInputManager _inputManager;
     private float _rotation;
 
 
     private void Awake()
     {
-        _playerManager = GetComponent<PlayerManager>();
+        _inputManager = GetComponent<PlayerInputManager>();
     }
 
     private void OnEnable()
     {
-        _playerManager.RotationInput += PlayerRotation_RotationInput;
+        _inputManager.RotationInput += PlayerRotation_RotationInput;
     }
 
     private void OnDisable()
     {
-        _playerManager.RotationInput -= PlayerRotation_RotationInput;
+        _inputManager.RotationInput -= PlayerRotation_RotationInput;
     }
 
     private void PlayerRotation_RotationInput(Vector2 rotationInput)
