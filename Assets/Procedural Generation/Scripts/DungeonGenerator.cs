@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class DungeonGenerator : MonoBehaviour
 {
+    [Header("TILES")]
     [SerializeField] private List<Tile> _tilePrefabs;
 
+    [Header("GRID SETTINGS")]
     [SerializeField] private int _tileOffset = 1;
     [SerializeField] private int _gridSize = 10;
 
