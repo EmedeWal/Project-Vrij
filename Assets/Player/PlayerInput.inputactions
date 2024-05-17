@@ -24,18 +24,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Mouse Rotation",
-                    "type": "Value",
-                    "id": "71ab155d-c8da-47c9-bb35-47a84650eef1",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Jumping",
+                    "name": "Inventory",
                     "type": "Button",
-                    "id": "56658cef-11db-47be-9e35-f108e5421f91",
+                    "id": "101e03d1-702c-416c-9380-380f6a91dae5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -79,7 +70,7 @@
                 {
                     "name": "left",
                     "id": "f832135a-1e35-4e1a-921b-659cf47fe141",
-                    "path": "<Keyboard>/a",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -90,7 +81,7 @@
                 {
                     "name": "right",
                     "id": "9749f7df-6bab-4063-8fdd-952891d9ed14",
-                    "path": "<Keyboard>/d",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -155,23 +146,12 @@
                 },
                 {
                     "name": "",
-                    "id": "8e340664-c3d5-45bb-837b-7f47cb1031b9",
-                    "path": "<Mouse>/delta",
+                    "id": "e04578fb-166a-43e0-94e9-27be3c5eb650",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Mouse Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "78ed1a2c-0bb7-4985-ad9f-9766049965c6",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jumping",
+                    "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

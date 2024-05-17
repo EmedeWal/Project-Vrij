@@ -42,12 +42,4 @@ public class Tile : MonoBehaviour
         }
         return true;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            DungeonGenerator.Instance.OnPlayerEnterTile(this);
-        }
-    }
 }

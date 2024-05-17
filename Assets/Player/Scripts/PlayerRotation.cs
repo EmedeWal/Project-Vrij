@@ -14,12 +14,12 @@ public class PlayerRotation : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputManager.RotationInput += PlayerRotation_RotationInput;
+        _inputManager.RotationInput_Value += PlayerRotation_RotationInput;
     }
 
     private void OnDisable()
     {
-        _inputManager.RotationInput -= PlayerRotation_RotationInput;
+        _inputManager.RotationInput_Value -= PlayerRotation_RotationInput;
     }
 
     private void PlayerRotation_RotationInput(Vector2 rotationInput)

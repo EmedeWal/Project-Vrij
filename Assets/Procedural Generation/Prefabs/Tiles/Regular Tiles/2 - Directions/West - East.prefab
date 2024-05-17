@@ -2112,8 +2112,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3880540900880293580}
-  - component: {fileID: 6377641033389896639}
   - component: {fileID: 4335145368620375685}
+  - component: {fileID: 8090727728672041658}
   m_Layer: 0
   m_Name: West - East
   m_TagString: Untagged
@@ -2141,21 +2141,6 @@ Transform:
   - {fileID: 3173646520501230138}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6377641033389896639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6225216122554473278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80210bef81003be4e9c7b7e08178a399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Exits:
-  - Direction: 3
-  - Direction: 1
 --- !u!65 &4335145368620375685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2177,6 +2162,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8090727728672041658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225216122554473278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ceb634da2044624b97c44ef2e6c77f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Exits:
+  - Direction: 3
+  - Direction: 1
+  - Direction: 0
 --- !u!1 &6261657380278443222
 GameObject:
   m_ObjectHideFlags: 0

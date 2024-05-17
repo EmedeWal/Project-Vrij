@@ -1,17 +1,34 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DungeonGenerator : MonoBehaviour
 {
     [Header("TILES")]
     [SerializeField] private List<Tile> _tilePrefabs;
+    [SerializeField] private List<Tile> _exitTilePrefabs;
+
+    [Header("PICKUPS")]
+    [SerializeField] private List<Pickup> _pickupPrefabs;
+    [SerializeField] private float _pickupSpawnChance = 0.1f;
 
     [Header("GRID SETTINGS")]
-    [SerializeField] private int _tileOffset = 1;
     [SerializeField] private int _gridSize = 10;
+    private int _tileOffset = 5;
 
-    private List<Tile> _placedTiles = new List<Tile>();
+    [Header("STORAGE")]
+    [SerializeField] private Transform _tileStorage;
+    [SerializeField] private Transform _pickupStorage;
+
     private Dictionary<Vector3, Tile> _tilePositions = new Dictionary<Vector3, Tile>();
+    private List<Tile> _placedTiles = new List<Tile>();
+
+    private Dictionary<Vector3, Pickup> _pickupPositions = new Dictionary<Vector3, Pickup>();
+    private List<Pickup> _collectedPickups = new List<Pickup>();
+    private List<Pickup> _placedPickups = new List<Pickup>();
+
+    private int _pickupsCollected = 0;
+
     private Vector3 _playerTilePosition;
 
     #region Singleton
@@ -46,9 +63,7 @@ public class DungeonGenerator : MonoBehaviour
 
                 if (newTile != null)
                 {
-                    Tile placedTile = Instantiate(newTile, newPosition, Quaternion.identity);
-                    _placedTiles.Add(placedTile);
-                    _tilePositions[newPosition] = placedTile;
+                    PlaceTile(newTile, newPosition);
                 }
             }
         }
@@ -77,9 +92,7 @@ public class DungeonGenerator : MonoBehaviour
 
                 if (newTile != null)
                 {
-                    Tile placedTile = Instantiate(newTile, position, Quaternion.identity);
-                    _placedTiles.Add(placedTile);
-                    _tilePositions[position] = placedTile;
+                    PlaceTile(newTile, position);
                 }
             }
         }
@@ -96,10 +109,7 @@ public class DungeonGenerator : MonoBehaviour
 
         foreach (var position in positionsToRemove)
         {
-            Tile tileToRemove = _tilePositions[position];
-            _placedTiles.Remove(tileToRemove);
-            _tilePositions.Remove(position);
-            Destroy(tileToRemove.gameObject);
+            DestroyTile(position);
         }
 
         _playerTilePosition = playerTilePosition;
@@ -169,5 +179,90 @@ public class DungeonGenerator : MonoBehaviour
             return _tilePositions[position];
         }
         return null;
+    }
+
+    private void PlaceTile(Tile tile, Vector3 position)
+    {
+        Tile placedTile = Instantiate(tile, position, Quaternion.identity);
+
+        _placedTiles.Add(placedTile);
+        _tilePositions[position] = placedTile;
+
+        placedTile.transform.SetParent(_tileStorage);
+
+        int roof = 10;
+        int chance = Random.Range(0, roof);
+
+        if (chance <= _pickupSpawnChance * roof)
+        {
+            PlacePickup(position);
+        }
+    }
+
+    private void DestroyTile(Vector3 position)
+    {
+        Tile tileToRemove = _tilePositions[position];
+
+        _placedTiles.Remove(tileToRemove);
+        _tilePositions.Remove(position);
+
+        Destroy(tileToRemove.gameObject);
+
+        if (_pickupPositions.ContainsKey(position))
+        {
+            DestroyPickup(position);
+        }
+    }
+
+    private void PlacePickup(Vector3 position)
+    {
+        if (position == Vector3.zero) return;
+
+        int index = Random.Range(0, _pickupPrefabs.Count);
+
+        if (_placedPickups.Any(p => p.PickupType == _pickupPrefabs[index].PickupType) || _collectedPickups.Any(p => p.PickupType == _pickupPrefabs[index].PickupType))
+        {
+            return;
+        }
+
+        Pickup pickup = Instantiate(_pickupPrefabs[index], position, Quaternion.identity);
+
+        _placedPickups.Add(pickup);
+        _pickupPositions[position] = pickup;
+
+        pickup.transform.SetParent(_pickupStorage);
+    }
+
+    public void DestroyPickup(Vector3 position)
+    {
+        Pickup pickupToRemove = _pickupPositions[position];
+
+        if (pickupToRemove != null)
+        {
+            _placedPickups.Remove(pickupToRemove);
+            _pickupPositions.Remove(position);
+
+            Destroy(pickupToRemove.gameObject);
+        }
+    }
+
+    public void CollectedPickup(Pickup pickup)
+    {
+        _pickupsCollected++;
+
+        _collectedPickups.Add(pickup);
+
+        if (_pickupsCollected == _pickupPrefabs.Count)
+        {
+            AddExitTiles();
+        }
+    }
+
+    private void AddExitTiles()
+    {
+        foreach (var tile in _exitTilePrefabs)
+        {
+            _tilePrefabs.Add(tile);
+        }
     }
 }

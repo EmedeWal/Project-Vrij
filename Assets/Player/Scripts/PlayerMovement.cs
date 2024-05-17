@@ -22,12 +22,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputManager.MovementInputValue += PlayerMovement_MoveInputPerformed;
+        _inputManager.MovementInput_Value += PlayerMovement_MoveInputPerformed;
     }
 
     private void OnDisable()
     {
-        _inputManager.MovementInputValue -= PlayerMovement_MoveInputPerformed;
+        _inputManager.MovementInput_Value -= PlayerMovement_MoveInputPerformed;
     }
 
     private void Update()
