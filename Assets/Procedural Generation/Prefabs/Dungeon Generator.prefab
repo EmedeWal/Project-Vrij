@@ -64,7 +64,7 @@ MonoBehaviour:
   - {fileID: 5655203058389860072, guid: a67f2c4020a4d1247b92fdd0fdd6baf9, type: 3}
   - {fileID: 1485391730400978782, guid: 33e6a7ef88e8b634796ba7625c0baaae, type: 3}
   _pickupPrefabs:
-  - {fileID: 3080194084337149752, guid: 3e02ca4dba0f77248a59d0da457f26b6, type: 3}
+  - {fileID: 1908586258605116074, guid: 3e02ca4dba0f77248a59d0da457f26b6, type: 3}
   - {fileID: 6964581210365576435, guid: 2ae27e999ff5568478f36656f326e126, type: 3}
   - {fileID: 7536304714386279854, guid: 47b5f43178129ad4291a9ffe56b90394, type: 3}
   - {fileID: 8238154954754941131, guid: 404ed4a15632c364eabd28e0fb66189e, type: 3}
@@ -102,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 2578138319200599887}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

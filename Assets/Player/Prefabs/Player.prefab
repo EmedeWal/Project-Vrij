@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 4203488430162705005}
   - component: {fileID: 233094696214134879}
   - component: {fileID: 2649882517144624251}
+  - component: {fileID: 2438451171379343588}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -237,13 +238,21 @@ MonoBehaviour:
     m_ActionId: d2f12e1e-310f-4d4d-8e08-a4efa7912212
     m_ActionName: Player Input/Rotation[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 71ab155d-c8da-47c9-bb35-47a84650eef1
-    m_ActionName: Player Input/Mouse Rotation[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 56658cef-11db-47be-9e35-f108e5421f91
-    m_ActionName: Player Input/Jumping[/Keyboard/space]
+      m_Calls:
+      - m_Target: {fileID: 4203488430162705005}
+        m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
+        m_MethodName: OnInventoryInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 101e03d1-702c-416c-9380-380f6a91dae5
+    m_ActionName: Player Input/Inventory[/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player Input
@@ -273,8 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a561b15700d2345a9acadeb6dd0dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 15
-  _smoothTime: 0.25
+  _movementSpeed: 7
+  _smoothTime: 10
 --- !u!114 &2649882517144624251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +297,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 7
+--- !u!114 &2438451171379343588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387232510906008170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8bab34a9a64c604db2e4e3d69121a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7908520474761867639
 GameObject:
   m_ObjectHideFlags: 0
