@@ -2039,13 +2039,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 233094696214134879, guid: bac484e3c8e507141b85c7dacf08a9ff, type: 3}
-      propertyPath: _smoothTime
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 233094696214134879, guid: bac484e3c8e507141b85c7dacf08a9ff, type: 3}
-      propertyPath: _movementSpeed
-      value: 1.5
+    - target: {fileID: 2649882517144624251, guid: bac484e3c8e507141b85c7dacf08a9ff, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7387232510906008170, guid: bac484e3c8e507141b85c7dacf08a9ff, type: 3}
       propertyPath: m_Name
@@ -2068,6 +2064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon Generator
       objectReference: {fileID: 0}
+    - target: {fileID: 4687133590710865175, guid: 2764d3657f473a4408a9f87a76a86fd6, type: 3}
+      propertyPath: _emptyTile
+      value: 
+      objectReference: {fileID: 238525427063365532, guid: b5a182567bf404d4fbdcd7b04844a4cf, type: 3}
     - target: {fileID: 7883890840063753309, guid: 2764d3657f473a4408a9f87a76a86fd6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2136,6 +2136,10 @@ PrefabInstance:
     - target: {fileID: 1297419186758201632, guid: ea8d62ad586d63e4cbcd298f8a3e9e86, type: 3}
       propertyPath: _offset.y
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297419186758201632, guid: ea8d62ad586d63e4cbcd298f8a3e9e86, type: 3}
+      propertyPath: _smoothTime
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3886084450292877446, guid: ea8d62ad586d63e4cbcd298f8a3e9e86, type: 3}
       propertyPath: m_LocalPosition.x

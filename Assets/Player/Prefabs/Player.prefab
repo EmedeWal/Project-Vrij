@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 233094696214134879}
   - component: {fileID: 2649882517144624251}
   - component: {fileID: 2438451171379343588}
+  - component: {fileID: 618018436415330546}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -253,6 +254,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 101e03d1-702c-416c-9380-380f6a91dae5
     m_ActionName: Player Input/Inventory[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4203488430162705005}
+        m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
+        m_MethodName: OnSnapRotationInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b839cf00-9e50-463b-bde4-2d6ab35568d2
+    m_ActionName: Player Input/Snap Rotation[/Keyboard/q,/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player Input
@@ -282,8 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a561b15700d2345a9acadeb6dd0dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 7
-  _smoothTime: 10
+  _movementSpeed: 1.5
+  _smoothTime: 14
 --- !u!114 &2649882517144624251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +324,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8bab34a9a64c604db2e4e3d69121a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &618018436415330546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387232510906008170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c768729f919a48048abd9a2579712979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7908520474761867639

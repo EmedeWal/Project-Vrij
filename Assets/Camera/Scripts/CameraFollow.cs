@@ -22,6 +22,8 @@ public class CameraFollow : MonoBehaviour
         Vector3 targetPos = _target.position + _offset;
         float smoothing = _smoothTime * Time.deltaTime;
 
-        transform.SetPositionAndRotation(Vector3.Lerp(currentPos, targetPos, smoothing), Quaternion.Lerp(transform.rotation, _target.rotation, smoothing));
+        //transform.SetPositionAndRotation(Vector3.Lerp(currentPos, targetPos, smoothing), Quaternion.Lerp(transform.rotation, _target.rotation, smoothing));
+        transform.position = Vector3.Lerp(currentPos, targetPos, smoothing);
+        //transform.rotation = _target.rotation;
     }
 }

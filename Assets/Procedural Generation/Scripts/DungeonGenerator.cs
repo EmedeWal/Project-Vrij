@@ -7,6 +7,7 @@ public class DungeonGenerator : MonoBehaviour
     [Header("TILES")]
     [SerializeField] private List<Tile> _tilePrefabs;
     [SerializeField] private List<Tile> _exitTilePrefabs;
+    [SerializeField] private Tile _emptyTile;
 
     [Header("PICKUPS")]
     [SerializeField] private List<Pickup> _pickupPrefabs;
@@ -169,6 +170,7 @@ public class DungeonGenerator : MonoBehaviour
         {
             int randomIndex = Random.Range(0, _tilePrefabs.Count);
             return _tilePrefabs[randomIndex];
+            //return _emptyTile;
         }
     }
 
