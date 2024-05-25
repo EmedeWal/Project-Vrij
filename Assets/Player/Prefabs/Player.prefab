@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3585808852410831995}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -125,13 +125,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 211078526252048409}
+  - component: {fileID: 1030665950467396664}
   - component: {fileID: 7203013696134428301}
+  - component: {fileID: 8601814873710234333}
   - component: {fileID: 8353016249869382089}
   - component: {fileID: 4203488430162705005}
-  - component: {fileID: 233094696214134879}
-  - component: {fileID: 2649882517144624251}
+  - component: {fileID: 7453338830595828051}
   - component: {fileID: 2438451171379343588}
-  - component: {fileID: 618018436415330546}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -155,6 +155,14 @@ Transform:
   - {fileID: 3892870180450721266}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1030665950467396664
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387232510906008170}
+  m_Enabled: 1
 --- !u!143 &7203013696134428301
 CharacterController:
   m_ObjectHideFlags: 0
@@ -181,6 +189,28 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!195 &8601814873710234333
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387232510906008170}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 6
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 200
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &8353016249869382089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +300,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b839cf00-9e50-463b-bde4-2d6ab35568d2
     m_ActionName: Player Input/Snap Rotation[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4203488430162705005}
+        m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
+        m_MethodName: OnMouseClickInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 70821e83-8b47-4243-a300-ee27b893cf32
+    m_ActionName: Player Input/Mouse Move[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player Input
@@ -287,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716ea44714b81ac489b1e388a71badda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &233094696214134879
+--- !u!114 &7453338830595828051
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,24 +342,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7387232510906008170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26a561b15700d2345a9acadeb6dd0dd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fc4a2b2f2fb3dd4eb0c7ae613d2019e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 1.5
-  _smoothTime: 14
---- !u!114 &2649882517144624251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7387232510906008170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17a80dc32a09bb41b7d779151b47c83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationSpeed: 7
 --- !u!114 &2438451171379343588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,18 +355,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8bab34a9a64c604db2e4e3d69121a84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &618018436415330546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7387232510906008170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c768729f919a48048abd9a2579712979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7908520474761867639

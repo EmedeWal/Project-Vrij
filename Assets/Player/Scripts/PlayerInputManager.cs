@@ -4,6 +4,9 @@ using System;
 
 public class PlayerInputManager : MonoBehaviour
 {
+    public event Action MouseClickInputPerformed;
+    public event Action MouseClickInputCanceled;
+
     public event Action<Vector2> MovementInput_Value;
 
     public event Action<Vector2> RotationInput_Value;
@@ -11,6 +14,18 @@ public class PlayerInputManager : MonoBehaviour
     public event Action<float> SnapRotationInput_Value;
 
     public event Action InventoryInput_Performed;
+
+    public void OnMouseClickInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            MouseClickInputPerformed?.Invoke();
+        }
+        else if (context.canceled)
+        {
+            MouseClickInputCanceled?.Invoke();
+        }
+    }
 
     public void OnMovementInput(InputAction.CallbackContext context)
     {
