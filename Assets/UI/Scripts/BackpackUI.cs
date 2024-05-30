@@ -1,39 +1,66 @@
 using UnityEngine;
 
-public class BackpackUI : FlowerUI
+public class BackpackUI : MonoBehaviour
 {
-    [SerializeField] private GameObject _holder;
-
-    private void Awake()
-    {
-        ManageHolder(false);
-    }
+    [SerializeField] private GameObject[] _flowerIcons;
 
     private void OnEnable()
     {
-        PlayerInventory.OpenInventory += BackpackUI_OpenInventory;
-        PlayerInventory.CloseInventory += BackpackUI_CloseInventory;
+        PlayerInventory.FlowerSet += BackpackUI_FlowerSet;
     }
 
     private void OnDisable()
     {
-        PlayerInventory.OpenInventory -= BackpackUI_OpenInventory;
-        PlayerInventory.CloseInventory -= BackpackUI_CloseInventory;
+        PlayerInventory.FlowerSet -= BackpackUI_FlowerSet;
     }
 
-    private void BackpackUI_OpenInventory()
+    private void BackpackUI_FlowerSet(FlowerType flowerType)
     {
-        ManageHolder(true);
+        switch (flowerType)
+        {
+            case FlowerType.None:
+                DisableIcons(); 
+                break;
+
+            case FlowerType.Love:
+                EnableIcon(0);
+                break;
+
+            case FlowerType.Joy:
+                EnableIcon(1);
+                break;
+
+            case FlowerType.Pride:
+                EnableIcon(2);
+                break;
+
+            case FlowerType.Fear:
+                EnableIcon(3);
+                break;
+
+            case FlowerType.Sadness:
+                EnableIcon(4);
+                break;
+
+            case FlowerType.Anger:
+                EnableIcon(5);
+                break;
+        }
     }
 
-    private void BackpackUI_CloseInventory()
+    private void EnableIcon(int position)
     {
-        ManageHolder(false);
+        DisableIcons();
+
+        _flowerIcons[position].SetActive(true);
     }
 
-    private void ManageHolder(bool active)
+    private void DisableIcons()
     {
-        _holder.SetActive(active);
+        foreach (var icon in _flowerIcons)
+        {
+            icon.SetActive(false);
+        }
     }
 }
 

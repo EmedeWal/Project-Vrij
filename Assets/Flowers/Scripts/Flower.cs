@@ -1,25 +1,31 @@
 using UnityEngine;
 
-public class Flower : MonoBehaviour
+public class Flower : DialogueSystem
 {
-    public FlowerType FlowerType;
+    [Header("FLOWER RELATED")]
+    [SerializeField] private FlowerType _flowerType;
 
-    public delegate void Flower_FlowerCollected(FlowerType flowerType);
-    public static event Flower_FlowerCollected FlowerCollected;
+    public delegate void Flower_UpdateFlowerType(FlowerType flowerType);
+    public static event Flower_UpdateFlowerType UpdateFlowerType;
 
-    private void OnTriggerEnter(Collider other)
+    protected override void PlayerEntered()
     {
-        Debug.Log("Trigger entered");
-
-        if (other.CompareTag("Player"))
-        {
-            OnPickupCollected();
-            Destroy(gameObject);
+        if (PlayerInventory.Instance.FlowerTypeIsNone())
+        { 
+            StartDialogue();
         }
     }
 
-    private void OnPickupCollected()
+    protected override void EndDialogue()
+    { 
+        Time.timeScale = 1;
+        CloseDialogueBox();
+        OnUpdateFlowerType();
+        Destroy(gameObject);
+    }
+
+    private void OnUpdateFlowerType()
     {
-        FlowerCollected?.Invoke(FlowerType);
+        UpdateFlowerType?.Invoke(_flowerType);
     }
 }

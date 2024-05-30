@@ -1,36 +1,65 @@
 using UnityEngine;
 
-public class FlowerEffects : FlowerUI
+public class FlowerEffects : MonoBehaviour
 {
-    [Header("Fear Flower")]
-    [SerializeField] private Color _lightColor;
-    [SerializeField] private float _newIntensity;
+    [SerializeField] private GameObject[] _flowerIcons;
 
-    protected override void LoveFlowerCollected()
+    private void OnEnable()
     {
-        LightManager.Instance.RevertLightColorAndIntensity();
-        DisableElements();
-        EnableElement(0);
+        Flower.UpdateFlowerType += FlowerEffects_UpdateFlowerType;
     }
 
-    protected override void FearFlowerCollected()
+    private void OnDisable()
     {
-        LightManager.Instance.SetLightColorAndIntensity(_lightColor, _newIntensity);
-        DisableElements();
-        EnableElement(1);
+        Flower.UpdateFlowerType -= FlowerEffects_UpdateFlowerType;
     }
 
-    protected override void LonelinessFlowerCollected()
+    private void FlowerEffects_UpdateFlowerType(FlowerType flowerType)
     {
-        LightManager.Instance.RevertLightColorAndIntensity();
-        DisableElements();
-        EnableElement(2);
+        switch (flowerType)
+        {
+            case FlowerType.None:
+                
+                break;
+
+            case FlowerType.Love:
+
+                break;
+
+            case FlowerType.Joy:
+
+                break;
+
+            case FlowerType.Pride:
+
+                break;
+
+            case FlowerType.Fear:
+
+                break;
+
+            case FlowerType.Sadness:
+
+                break;
+
+            case FlowerType.Anger:
+
+                break;
+        }
     }
 
-    protected override void JoyFlowerCollected()
+    private void EnableIcon(int position)
     {
-        LightManager.Instance.RevertLightColorAndIntensity();
-        DisableElements();
-        EnableElement(3);
+        DisableIcons();
+
+        _flowerIcons[position].SetActive(true);
+    }
+
+    private void DisableIcons()
+    {
+        foreach (var icon in _flowerIcons)
+        {
+            icon.SetActive(false);
+        }
     }
 }

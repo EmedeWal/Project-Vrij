@@ -2,51 +2,65 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private PlayerInputManager _inputManager;
-    private bool _isOpen = false;
-
-    public delegate void PlayerInventory_OpenInventory();
-    public static event PlayerInventory_OpenInventory OpenInventory;
-
-    public delegate void PlayerInventory_CloseInventory();
-    public static event PlayerInventory_CloseInventory CloseInventory;
+    #region Singleton
+    public static PlayerInventory Instance { get; private set; }
 
     private void Awake()
     {
-        _inputManager = GetComponent<PlayerInputManager>();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
+
+    [SerializeField] private FlowerType _currentFlower = FlowerType.None;
+
+    public delegate void PlayerInventory_FlowerSet(FlowerType flowerType);
+    public static event PlayerInventory_FlowerSet FlowerSet;
+
+    private void Start()
+    {
+        SetFlowerType(_currentFlower);
     }
 
     private void OnEnable()
     {
-        _inputManager.InventoryInput_Performed += PlayerInventory_InventoryInput_Performed;
+        Flower.UpdateFlowerType += PlayerInventory_UpdateFlowerType;
     }
 
     private void OnDisable()
     {
-        _inputManager.InventoryInput_Performed -= PlayerInventory_InventoryInput_Performed;
+        Flower.UpdateFlowerType -= PlayerInventory_UpdateFlowerType;
     }
 
-    private void PlayerInventory_InventoryInput_Performed()
+    private void PlayerInventory_UpdateFlowerType(FlowerType flowerType)
     {
-        if (_isOpen)
-        {
-            _isOpen = false;
-            OnCloseInventory();
-        }
-        else
-        {
-            _isOpen = true;
-            OnOpenInventory();
-        }
+        SetFlowerType(flowerType);
     }
 
-    private void OnOpenInventory()
+    public void SetFlowerType(FlowerType newFlower)
     {
-        OpenInventory?.Invoke();
+        _currentFlower = newFlower;
+        OnFlowerSet(newFlower);
     }
 
-    private void OnCloseInventory()
+    public FlowerType GetFlowerType()
     {
-        CloseInventory?.Invoke();
+        return _currentFlower;
+    }
+
+    public bool FlowerTypeIsNone()
+    {
+        return _currentFlower == FlowerType.None;
+    }
+
+    private void OnFlowerSet(FlowerType flowerType)
+    {
+        FlowerSet?.Invoke(flowerType);
     }
 }

@@ -15,31 +15,14 @@ public class PlayerMouseMove : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerInventory.OpenInventory += PlayerMouseMove_OpenInventory;
-        PlayerInventory.CloseInventory += PlayerMouseMove_CloseInventory;
-
         _inputManager.MouseClickInputPerformed += PlayerMouseMove_MouseClickInputPerformed;
         _inputManager.MouseClickInputCanceled += PlayerMouse_MouseClickInputCanceled;
     }
 
     private void OnDisable()
     {
-        PlayerInventory.OpenInventory -= PlayerMouseMove_OpenInventory;
-        PlayerInventory.CloseInventory -= PlayerMouseMove_CloseInventory;
-
         _inputManager.MouseClickInputPerformed -= PlayerMouseMove_MouseClickInputPerformed;
         _inputManager.MouseClickInputCanceled -= PlayerMouse_MouseClickInputCanceled;
-    }
-
-    private void PlayerMouseMove_OpenInventory()
-    {
-        StopAgent();
-    }
-
-    private void PlayerMouseMove_CloseInventory()
-    {
-        StartAgent();
-        _agent.SetDestination(transform.position);
     }
 
     private void PlayerMouseMove_MouseClickInputPerformed()

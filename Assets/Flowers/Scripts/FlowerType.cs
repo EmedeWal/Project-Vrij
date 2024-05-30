@@ -1,7 +1,10 @@
 public enum FlowerType
 {
+    None,
     Love,
+    Joy,
+    Pride,
     Fear,
-    Loneliness,
-    Joy
+    Sadness,
+    Anger
 }
