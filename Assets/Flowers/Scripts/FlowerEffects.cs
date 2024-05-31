@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class FlowerEffects : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _flowerIcons;
+    [SerializeField] private GameObject[] _effects;
+
+    private void Start()
+    {
+        DisableEffects();
+    }
 
     private void OnEnable()
     {
@@ -19,11 +24,10 @@ public class FlowerEffects : MonoBehaviour
         switch (flowerType)
         {
             case FlowerType.None:
-                
                 break;
 
             case FlowerType.Love:
-
+                EnableEffect(0);
                 break;
 
             case FlowerType.Joy:
@@ -39,7 +43,7 @@ public class FlowerEffects : MonoBehaviour
                 break;
 
             case FlowerType.Sadness:
-
+                EnableEffect(1);
                 break;
 
             case FlowerType.Anger:
@@ -48,16 +52,16 @@ public class FlowerEffects : MonoBehaviour
         }
     }
 
-    private void EnableIcon(int position)
+    private void EnableEffect(int position)
     {
-        DisableIcons();
+        DisableEffects();
 
-        _flowerIcons[position].SetActive(true);
+        _effects[position].SetActive(true);
     }
 
-    private void DisableIcons()
+    private void DisableEffects()
     {
-        foreach (var icon in _flowerIcons)
+        foreach (var icon in _effects)
         {
             icon.SetActive(false);
         }
