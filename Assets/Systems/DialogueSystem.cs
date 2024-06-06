@@ -1,54 +1,38 @@
-using TMPro;
 using UnityEngine;
+using System;
 
 public abstract class DialogueSystem : PlayerTrigger
 {
     [Header("DIALOGUE RELATED")]
-    [SerializeField] private GameObject _dialogueBox;
-    [SerializeField] private TextMeshProUGUI _dialogueText;
     [SerializeField] private string[] _dialogueMessages;
     private int _dialogueIndex = 0;
 
-    private void Awake()
-    {
-        CloseDialogueBox();
-        UpdateDialogue();
-    }
+    public static event Action<FlowerType> DialogueStarted;
+    public static event Action<string> DialogueUpdated;
+    public static event Action DialogueEnded;
 
-    protected virtual void StartDialogue()
+    protected virtual void StartDialogue(FlowerType flowerType)
     {
+        DialogueUI.Instance.DialogueAdvanced += DialogueSystem_DialogueAdvanced;
         Time.timeScale = 0;
-        OpenDialogueBox();
+        OnDialogueUpdated();
+        OnDialogueStarted(flowerType);
     }
 
     protected virtual void EndDialogue()
     {
+        DialogueUI.Instance.DialogueAdvanced -= DialogueSystem_DialogueAdvanced;
         Time.timeScale = 1; 
-        CloseDialogueBox();
+        OnDialogueEnded();
     }
 
-    protected void OpenDialogueBox()
-    {
-        _dialogueBox.SetActive(true);
-    }
-
-    protected void CloseDialogueBox()
-    {
-        _dialogueBox.SetActive(false);
-    }
-
-    private void UpdateDialogue()
-    {
-        _dialogueText.text = _dialogueMessages[_dialogueIndex];
-    }
-
-    public void AdvanceDialogue()
+    private void DialogueSystem_DialogueAdvanced()
     {
         _dialogueIndex++;
 
         if (_dialogueIndex < _dialogueMessages.Length)
         {
-            UpdateDialogue();
+            OnDialogueUpdated();
         }
         else
         {
@@ -60,6 +44,21 @@ public abstract class DialogueSystem : PlayerTrigger
     {
         _dialogueMessages = newDialogueMessages;
         _dialogueIndex = 0;
-        UpdateDialogue();
+        OnDialogueUpdated();
+    }
+
+    private void OnDialogueStarted(FlowerType flowerType)
+    {
+        DialogueStarted?.Invoke(flowerType);
+    }
+
+    private void OnDialogueUpdated()
+    {
+        DialogueUpdated?.Invoke(_dialogueMessages[_dialogueIndex]);
+    }
+
+    private void OnDialogueEnded()
+    {
+        DialogueEnded?.Invoke();
     }
 }

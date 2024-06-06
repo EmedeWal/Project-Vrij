@@ -10,16 +10,15 @@ public class Flower : DialogueSystem
 
     protected override void PlayerEntered()
     {
-        if (PlayerInventory.Instance.FlowerTypeIsNone())
+        if (PlayerInventory.Instance.FlowerTypeIsNone() && GameManager.Instance.GetGameState() != GameManager.GameState.Beginning)
         { 
-            StartDialogue();
+            StartDialogue(_flowerType);
         }
     }
 
     protected override void EndDialogue()
     { 
-        Time.timeScale = 1;
-        CloseDialogueBox();
+        base.EndDialogue();
         OnUpdateFlowerType();
         Destroy(gameObject);
     }

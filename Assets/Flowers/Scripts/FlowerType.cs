@@ -6,5 +6,6 @@ public enum FlowerType
     Pride,
     Fear,
     Sadness,
-    Anger
+    Anger,
+    Main
 }

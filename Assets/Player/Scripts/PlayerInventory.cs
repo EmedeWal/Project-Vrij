@@ -18,7 +18,7 @@ public class PlayerInventory : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private FlowerType _currentFlower = FlowerType.None;
+    private FlowerType _currentFlower = FlowerType.None;
 
     public delegate void PlayerInventory_FlowerSet(FlowerType flowerType);
     public static event PlayerInventory_FlowerSet FlowerSet;
