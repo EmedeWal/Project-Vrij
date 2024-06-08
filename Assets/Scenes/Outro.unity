@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 657220853}
   - component: {fileID: 657220852}
   m_Layer: 5
-  m_Name: RawImage - Intro Texture
+  m_Name: RawImage - Outro Texture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,7 +480,7 @@ VideoPlayer:
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: cd8d20d9b020172458a056f831a55f72, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: d1e86875ae10fa84dae66afe0c948810, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
