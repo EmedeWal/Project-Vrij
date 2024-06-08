@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7bf2318540ba841bf02ab3adfe2f65, type: 3}
+  m_Name: 05 - Sadness Dialogue
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogueText: Not much has been going my way lately. I feel a little overwhelmed.
+      How would you deal with that feeling?
+    responses:
+    - responseText: I would keep it together.
+      nextNode:
+        dialogueText: 'Really? That seems difficult. Is there any particular reason
+          for the way you deal with misfortune? '
+        responses:
+        - responseText: "I don\u2019t want to be a burden."
+          nextNode:
+            dialogueText: I recognize that feeling, but it is important to remember
+              that if we are a burden to our friends when we need them, they might
+              not be the best of friends.
+            responses:
+            - responseText: "I don\u2019t know."
+              nextNode:
+                dialogueText: "That\u2019s okay. Sometimes you just need some time
+                  to figure everything out. Could you take me back to mother? I miss
+                  her."
+                responses:
+                - responseText: Of course.
+                  nextNode:
+                    dialogueText: 
+                    responses: []
+        - responseText: "It\u2019s just not like me to cry."
+          nextNode:
+            dialogueText: "I simply don\u2019t believe that. All of us can cry. Sadness
+              is an emotion like any other. By blocking it out, you could block out
+              Joy and Love, too."
+            responses:
+            - responseText: "I don\u2019t know."
+              nextNode:
+                dialogueText: "That\u2019s okay. Sometimes you just need some time
+                  to figure everything out. Could you take me back to mother? I miss
+                  her."
+                responses:
+                - responseText: Of course.
+                  nextNode:
+                    dialogueText: 
+                    responses: []
+    - responseText: I would let it out.
+      nextNode:
+        dialogueText: "I think you are really brave for daring to be vulnerable.
+          You can\u2019t heal by ignoring and you can\u2019t be helped by being invisible. "
+        responses:
+        - responseText: "Let\u2019s take you to your mother."
+          nextNode:
+            dialogueText: 
+            responses: []

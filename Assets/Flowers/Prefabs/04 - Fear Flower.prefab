@@ -67,11 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4e534a7edc7b645b50d8a94571e63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueMessages:
-  - "Stay away from me, you hear! Don\u2019t come closer, I mean it! Who are you,
-    and what do you want?"
-  - Oh! Mother has sent you? Excuse my behavior. You cannot be too careful these
-    days. They lie, they cheat, they judge. There is much danger out there.
+  _name: MARA
+  _dialogue: {fileID: 11400000, guid: 5a8e71a529dcdac4d89bb67d34b0dbbb, type: 2}
   _flowerType: 4
 --- !u!1001 &2357254327985754407
 PrefabInstance:

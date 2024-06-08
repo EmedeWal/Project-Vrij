@@ -19,7 +19,7 @@ public class BackpackUI : MonoBehaviour
         switch (flowerType)
         {
             case FlowerType.None:
-                DisableIcons(); 
+                DisableIcons();
                 break;
 
             case FlowerType.Love:

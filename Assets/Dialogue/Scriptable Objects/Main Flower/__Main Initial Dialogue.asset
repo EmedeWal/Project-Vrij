@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7bf2318540ba841bf02ab3adfe2f65, type: 3}
+  m_Name: __Main Initial Dialogue
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogueText: "Oh, hello there. Kind of you to visit these gardens. It\u2019s
+      been long since we had a visit from our host. As you can see, stress has taken
+      its toll on me, and I suppose on you, too."
+    responses:
+    - responseText: It has
+      nextNode:
+        dialogueText: Then it might be a good time to look around and collect your
+          thoughts. My children are lost and I am worried sick. Would you be so kind
+          as to bring them back to me?
+        responses:
+        - responseText: Of course
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: It has not
+      nextNode:
+        dialogueText: I am glad to hear that, although I cannot say the same. My
+          children are lost and I am worried sick. Would you be so kind as to bring
+          them back to me?
+        responses:
+        - responseText: Of course
+          nextNode:
+            dialogueText: 
+            responses: []

@@ -46,8 +46,8 @@ GameObject:
   - component: {fileID: 8601814873710234333}
   - component: {fileID: 8353016249869382089}
   - component: {fileID: 4203488430162705005}
-  - component: {fileID: 7453338830595828051}
   - component: {fileID: 2438451171379343588}
+  - component: {fileID: 7453338830595828051}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -156,70 +156,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4203488430162705005}
         m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
-        m_MethodName: OnMovementInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: df74c450-ad0b-4553-b90e-96c8aeca08cd
-    m_ActionName: Player Input/Movement[/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4203488430162705005}
-        m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
-        m_MethodName: OnRotationInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: d2f12e1e-310f-4d4d-8e08-a4efa7912212
-    m_ActionName: Player Input/Rotation[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4203488430162705005}
-        m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
-        m_MethodName: OnInventoryInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 101e03d1-702c-416c-9380-380f6a91dae5
-    m_ActionName: Player Input/Inventory[/Keyboard/tab]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4203488430162705005}
-        m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
-        m_MethodName: OnSnapRotationInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b839cf00-9e50-463b-bde4-2d6ab35568d2
-    m_ActionName: Player Input/Snap Rotation[/Keyboard/q,/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4203488430162705005}
-        m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
         m_MethodName: OnMouseClickInput
         m_Mode: 0
         m_Arguments:
@@ -232,6 +168,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 70821e83-8b47-4243-a300-ee27b893cf32
     m_ActionName: Player Input/Mouse Move[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4203488430162705005}
+        m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
+        m_MethodName: OnPauseGameInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f3b07aa7-0f78-4b4a-b471-1e4a32277d88
+    m_ActionName: Player Input/Pause Game[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player Input
@@ -249,18 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716ea44714b81ac489b1e388a71badda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7453338830595828051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7387232510906008170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fc4a2b2f2fb3dd4eb0c7ae613d2019e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2438451171379343588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +211,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8bab34a9a64c604db2e4e3d69121a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7453338830595828051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387232510906008170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc4a2b2f2fb3dd4eb0c7ae613d2019e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7908520474761867639

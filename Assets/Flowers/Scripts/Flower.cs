@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Flower : DialogueSystem
+public class Flower : Actor
 {
     [Header("FLOWER RELATED")]
     [SerializeField] private FlowerType _flowerType;
@@ -11,14 +11,21 @@ public class Flower : DialogueSystem
     protected override void PlayerEntered()
     {
         if (PlayerInventory.Instance.FlowerTypeIsNone() && GameManager.Instance.GetGameState() != GameManager.GameState.Beginning)
-        { 
-            StartDialogue(_flowerType);
+        {
+            Flower_DialogueStarted();
         }
     }
 
-    protected override void EndDialogue()
-    { 
-        base.EndDialogue();
+    private void Flower_DialogueStarted()
+    {
+        DialogueManager.Instance.DialogueEnded += Flower_DialogueEnded;
+        StartDialogue(_flowerType);
+    }
+
+    private void Flower_DialogueEnded()
+    {
+        DialogueManager.Instance.DialogueEnded -= Flower_DialogueEnded;
+        FlowerPortraitUI.Instance.DisableAllPortraits();
         OnUpdateFlowerType();
         Destroy(gameObject);
     }

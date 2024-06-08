@@ -67,13 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4e534a7edc7b645b50d8a94571e63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueMessages:
-  - "I would really like to be alone right now. Not all is going my way, and I think
-    it\u2019s all gonna be a bit much. Do you recognize that feeling?"
-  - "I find that it often helps to cry it out. Holding back the tears isn\u2019t
-    gonna make them disappear. It just makes them hide a little better. "
-  - It was nice talking to you, actually. I think I am ready to join mother. Would
-    you take me to her?
+  _name: ISOLDE
+  _dialogue: {fileID: 11400000, guid: 687fafc1b85b00741b5744053e0bfd25, type: 2}
   _flowerType: 5
 --- !u!1001 &1785764407177440147
 PrefabInstance:

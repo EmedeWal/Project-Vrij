@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7bf2318540ba841bf02ab3adfe2f65, type: 3}
+  m_Name: 06 - Anger Dialogue
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogueText: I feel like I could just about explode right now. Be careful not
+      to bug me right now. Have you ever reached such a point?
+    responses:
+    - responseText: Sometimes.
+      nextNode:
+        dialogueText: 'You might want to consider dealing with feelings of anger
+          earlier on, or you are gonna look much like me. Take me back to mother,
+          before I say things I am going to regret. '
+        responses:
+        - responseText: "Okay\u2026"
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: 'Never. '
+      nextNode:
+        dialogueText: Please write a book on how you manage it. I could really use
+          some advice on this matter. Now, take me back to mother, before I say things
+          I am going to regret.
+        responses:
+        - responseText: "Okay\u2026"
+          nextNode:
+            dialogueText: 
+            responses: []

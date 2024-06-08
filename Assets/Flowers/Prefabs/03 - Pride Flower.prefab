@@ -67,13 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4e534a7edc7b645b50d8a94571e63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueMessages:
-  - "For many of us, our actions and achievements define how we feel about ourselves.
-    Peculiar, isn\u2019t it?"
-  - 'Climbing tall mountains makes people feel good about themselves, when really,
-    it is quite useless. '
-  - I guess it is not so much about the achievement itself, but what had to be sacrificed
-    in order to get there.
+  _name: ORION
+  _dialogue: {fileID: 11400000, guid: 76b2287756ae2b04295aa00e5e6d676a, type: 2}
   _flowerType: 3
 --- !u!1001 &3763427082431126193
 PrefabInstance:

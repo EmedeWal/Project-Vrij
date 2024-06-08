@@ -67,13 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0288b139e31a5554dba9ac6f0b3f5023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueMessages:
-  - 'Come to seek recluse from the buzzing of the city? Then you are in the right
-    place. '
-  - You look very stressed out. Is everything all right? When was the last time you
-    took some time to do nothing? To collect your thoughts and rest?
-  - As you can see, I have seen better days. I have lost my children and cannot find
-    them myself. Would you be so kind as to return them to me?
+  _name: LUMINA
+  _dialogue: {fileID: 11400000, guid: faa43b1017a01e04cbe6245ff5e1f9df, type: 2}
   _flowerType: 7
   _petals:
   - {fileID: 6271918916306836681}
@@ -82,31 +77,14 @@ MonoBehaviour:
   - {fileID: 6757650893475562901}
   - {fileID: 4378966066605770922}
   - {fileID: 1460290301124717198}
-  _loveFlowerMessages:
-  - ' I am particularly fond of this one. Even though raising her was not always
-    easy, I was happy to carry the burden. '
-  _joyFlowerMessages:
-  - Always a cheery little fellow. Often, it was the little moments that put a smile
-    on my face.
-  _prideFlowerMessages:
-  - 'My little devil. Hard work, raising him, but I could not be more happy about
-    the way he turned out. '
-  _fearFlowerMessages:
-  - I am surprised you got him to join you. He got seriously hurt once, and has been
-    a little wary since.
-  _sadnessFlowerMessages:
-  - She can be a little exhausting, but the sun shines much brighter after spending
-    some time with her.
-  _angerFlowerMessages:
-  - "Never afraid to fight, this one. Didn\u2019t make him many friends, but his
-    enemies know better than to mess with him."
-  _finalDialogueMessages:
-  - Thank you so much for this mesmerizing reunion. Even though this family has its
-    problems, we are deeply connected and inseparable, for better or worse.
-  - "The next time you feel overwhelmed, take some time to talk to your family. You\u2019d
-    be surprised at what they have to say, if you listen carefully."
-  - 'I cannot thank you enough. It is time you were on your way, the world is waiting
-    on you. Good luck, friend.  '
+  _dialogues:
+  - {fileID: 11400000, guid: 62daefd2365c9514099e5ae0d77c4c70, type: 2}
+  - {fileID: 11400000, guid: f902866e541ce334e9447b3b22149279, type: 2}
+  - {fileID: 11400000, guid: aab666fc1f8d8324c94e46fb8e415caa, type: 2}
+  - {fileID: 11400000, guid: 1448e0aecff3af341b3e48824266c4c0, type: 2}
+  - {fileID: 11400000, guid: cf161f984a7e9e543a2d2e9e92b65094, type: 2}
+  - {fileID: 11400000, guid: 0379c72b755ed6c48908c1f9293a2b89, type: 2}
+  _finalDialogue: {fileID: 11400000, guid: 62581bb440e50614f982ab47d27c411b, type: 2}
 --- !u!1001 &8107807565382818083
 PrefabInstance:
   m_ObjectHideFlags: 0

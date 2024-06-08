@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class MainFlower : DialogueSystem
+public class MainFlower : Actor
 {
     [Header("FLOWER TYPE")]
     [SerializeField] private FlowerType _flowerType;
@@ -10,21 +9,11 @@ public class MainFlower : DialogueSystem
     [Header("FLOWER PETALS")]
     [SerializeField] private GameObject[] _petals;
 
-    [Header("FLOWER UNIQUE RESPONSES")]
-    [SerializeField] private string[] _loveFlowerMessages;
-    [Space]
-    [SerializeField] private string[] _joyFlowerMessages;
-    [Space]
-    [SerializeField] private string[] _prideFlowerMessages;
-    [Space]
-    [SerializeField] private string[] _fearFlowerMessages;
-    [Space]
-    [SerializeField] private string[] _sadnessFlowerMessages;
-    [Space]
-    [SerializeField] private string[] _angerFlowerMessages;
+    [Header("FLOWER UNIQUE DIALOGUE")]
+    [SerializeField] private Dialogue[] _dialogues;
 
     [Header("FINAL DIALOGUE")]
-    [SerializeField] private string[] _finalDialogueMessages;
+    [SerializeField] private Dialogue _finalDialogue;
 
     private List<FlowerType> _collectedFlowers = new List<FlowerType>();
 
@@ -41,36 +30,36 @@ public class MainFlower : DialogueSystem
                 break;
 
             case FlowerType.Love:
-                CollectFlower(flowerType, 0, _loveFlowerMessages);
+                CollectFlower(flowerType, 0, _dialogues[0]);
                 break;
 
             case FlowerType.Joy:
-                CollectFlower(flowerType, 1, _joyFlowerMessages);
+                CollectFlower(flowerType, 1, _dialogues[1]);
                 break;
 
             case FlowerType.Pride:
-                CollectFlower(flowerType, 2, _prideFlowerMessages);
+                CollectFlower(flowerType, 2, _dialogues[2]);
                 break;
 
             case FlowerType.Fear:
-                CollectFlower(flowerType, 3, _fearFlowerMessages);
+                CollectFlower(flowerType, 3, _dialogues[3]);
                 break;
 
             case FlowerType.Sadness:
-                CollectFlower(flowerType, 4, _sadnessFlowerMessages);
+                CollectFlower(flowerType, 4, _dialogues[4]);
                 break;
 
             case FlowerType.Anger:
-                CollectFlower(flowerType, 5, _angerFlowerMessages);
+                CollectFlower(flowerType, 5, _dialogues[5]);
                 break;
         }
     }
 
-    private void CollectFlower(FlowerType flowerType, int petalIndex, string[] dialogueMessages)
+    private void CollectFlower(FlowerType flowerType, int petalIndex, Dialogue dialogue)
     {
         _collectedFlowers.Add(flowerType);
         _petals[petalIndex].SetActive(true);
-        SwapDialogueMessages(dialogueMessages);
+        UpdateDialogue(dialogue);
     }
 
     protected override void PlayerEntered()
@@ -78,25 +67,32 @@ public class MainFlower : DialogueSystem
         if (GameManager.Instance.GetGameState() == GameManager.GameState.Beginning)
         {
             GameManager.Instance.SetGameState(GameManager.GameState.Middle);
-            StartDialogue(_flowerType);
+            MainFlower_DialogueStarted();
         }
         else if (!PlayerInventory.Instance.FlowerTypeIsNone())
         {
             HandleFlowerCollection(PlayerInventory.Instance.GetFlowerType());
             PlayerInventory.Instance.SetFlowerType(FlowerType.None);
-            StartDialogue(_flowerType);
+            MainFlower_DialogueStarted();
         }
     }
 
-    protected override void EndDialogue()
+    private void MainFlower_DialogueStarted()
     {
-        base.EndDialogue();
+        DialogueManager.Instance.DialogueEnded += MainFlower_DialogueEnded;
+        StartDialogue(_flowerType);
+    }
+
+    private void MainFlower_DialogueEnded()
+    {
+        FlowerPortraitUI.Instance.DisableAllPortraits();
+        DialogueManager.Instance.DialogueEnded -= MainFlower_DialogueEnded;
 
         if (_collectedFlowers.Count == 6)
         {
             if (GameManager.Instance.GetGameState() == GameManager.GameState.End)
             {
-                SceneManager.LoadScene("End Screen");
+                GameManager.Instance.EndGame();
                 return;
             }
             else
@@ -104,8 +100,8 @@ public class MainFlower : DialogueSystem
                 GameManager.Instance.SetGameState(GameManager.GameState.End);
             }
 
-            SwapDialogueMessages(_finalDialogueMessages);
-            StartDialogue(_flowerType);
+            UpdateDialogue(_finalDialogue);
+            MainFlower_DialogueStarted();
         }
     }
 }

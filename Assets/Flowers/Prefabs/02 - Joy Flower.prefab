@@ -67,11 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4e534a7edc7b645b50d8a94571e63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueMessages:
-  - "I rarely get to spend some time alone. What a joy this is. It\u2019s lovely
-    to spend some time in nature by yourself, don\u2019t you think?"
-  - "Mother is looking for me, you say? Take me back. While this was nice, our family
-    isn\u2019t the same without me. "
+  _name: JOVIE
+  _dialogue: {fileID: 11400000, guid: fe3cfa7d8d2668f4fbb34af621315d03, type: 2}
   _flowerType: 2
 --- !u!1001 &4524598105143499887
 PrefabInstance:

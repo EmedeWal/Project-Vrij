@@ -67,14 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4e534a7edc7b645b50d8a94571e63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueMessages:
-  - Do you know that humans often love their pets more than themselves? Think about
-    it. They feed them, clean them, make sure they take medicine if they need it.
-  - "And yet, if there is a need for such measures for themselves, they will often
-    skimp on the necessary treatments, telling themselves \u201Cthat it will pass,
-    eventually\u201D. "
-  - I heard mother calling out. Could you take me back to her? She must be very worried
-    right now.
+  _name: LIORA
+  _dialogue: {fileID: 11400000, guid: 2d1d332e428f05a4eb7fee2bc1580291, type: 2}
   _flowerType: 1
 --- !u!1001 &2363744343805976161
 PrefabInstance:

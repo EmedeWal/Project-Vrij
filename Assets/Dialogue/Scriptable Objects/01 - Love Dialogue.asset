@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7bf2318540ba841bf02ab3adfe2f65, type: 3}
+  m_Name: 01 - Love Dialogue
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogueText: Do you think that it is easier for humans to love others than to
+      love themselves?
+    responses:
+    - responseText: I think so.
+      nextNode:
+        dialogueText: 'Think about how humans treat their pets. They take care of
+          them and make sure they stay healthy. Yet, they rarely give themselves
+          the same treatment. '
+        responses:
+        - responseText: I find it hard to take proper care of myself.
+          nextNode:
+            dialogueText: "But it IS hard. Don\u2019t feel bad. Just keep on trying.
+              You\u2019ll get there, don\u2019t you worry. "
+            responses:
+            - responseText: Thank you.
+              nextNode:
+                dialogueText: Could you take me back to mother? She must be very
+                  worried about me..
+                responses:
+                - responseText: Of course.
+                  nextNode:
+                    dialogueText: 
+                    responses: []
+        - responseText: I take good care of myself.
+          nextNode:
+            dialogueText: That is beautiful. It is just important to love yourself
+              as it is to love others.
+            responses:
+            - responseText: Thank you.
+              nextNode:
+                dialogueText: Could you take me back to mother? She must be very
+                  worried about me..
+                responses:
+                - responseText: Of course.
+                  nextNode:
+                    dialogueText: 
+                    responses: []
+    - responseText: "I don\u2019t think so."
+      nextNode:
+        dialogueText: "Why so? Do you hold that belief because of yourself, or because
+          of other\u2019s treatment of you?"
+        responses:
+        - responseText: Because of myself.
+          nextNode:
+            dialogueText: You seem like a nice person. Taking care of yourself first
+              before you help others is not selfish, you know.
+            responses:
+            - responseText: "You don\u2019t know what I meant."
+              nextNode:
+                dialogueText: 'I do not know you, that is true. But I love you, and
+                  I believe that you could be better if you tried. Start with small
+                  acts of good: would you take me back to mother?'
+                responses:
+                - responseText: Of course.
+                  nextNode:
+                    dialogueText: 
+                    responses: []
+            - responseText: You might be right. Thank you.
+              nextNode:
+                dialogueText: Could you take me back to mother? She must be very
+                  worried about me.
+                responses:
+                - responseText: Of course.
+                  nextNode:
+                    dialogueText: 
+                    responses: []
+        - responseText: Because of others.
+          nextNode:
+            dialogueText: "I am very sorry to hear that. I hope you\u2019ll have
+              more luck in the future. You never know when you\u2019ll meet someone
+              truly special."
+            responses:
+            - responseText: Thank you.
+              nextNode:
+                dialogueText: Could you take me back to mother? She must be very
+                  worried about me.
+                responses:
+                - responseText: Of course
+                  nextNode:
+                    dialogueText: 
+                    responses: []

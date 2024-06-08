@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7bf2318540ba841bf02ab3adfe2f65, type: 3}
+  m_Name: 03 - Pride Dialogue
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogueText: What makes you feel proud and satisfied with yourself? Your actions
+      and deeds, or your achievements?
+    responses:
+    - responseText: Being good.
+      nextNode:
+        dialogueText: That does not explain your choice of career. You spend more
+          time making money than making anyone happy. If you want to feel proud,
+          maybe you should consider switching careers.
+        responses:
+        - responseText: "I\u2019ll think about it."
+          nextNode:
+            dialogueText: "That\u2019s the spirit. I\u2019m sure you\u2019ll come
+              around eventually."
+            responses:
+            - responseText: "I\u2019ll take you back."
+              nextNode:
+                dialogueText: 
+                responses: []
+        - responseText: "I don\u2019t have a choice."
+          nextNode:
+            dialogueText: 'I get it. You wanted to make your father proud. However,
+              I bet he is not proud before you are. Just take some time and think
+              about it, okay? '
+            responses:
+            - responseText: "I\u2019ll take you back."
+              nextNode:
+                dialogueText: 
+                responses: []
+    - responseText: Being accomplished.
+      nextNode:
+        dialogueText: That would explain your choice of career. However, you do not
+          seem very proud. You might want to consider switching jobs.
+        responses:
+        - responseText: "I\u2019ll think about it."
+          nextNode:
+            dialogueText: "That\u2019s the spirit. I\u2019m sure you\u2019ll come
+              around eventually."
+            responses:
+            - responseText: "I\u2019ll take you back."
+              nextNode:
+                dialogueText: 
+                responses: []
+        - responseText: "I don\u2019t have a choice."
+          nextNode:
+            dialogueText: 'I get it. You wanted to make your father proud. However,
+              I bet he is not proud before you are. Just take some time and think
+              about it, okay? '
+            responses:
+            - responseText: "I\u2019ll take you back."
+              nextNode:
+                dialogueText: 
+                responses: []

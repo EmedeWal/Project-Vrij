@@ -67,13 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4e534a7edc7b645b50d8a94571e63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueMessages:
-  - Shut up. I do not want to talk to you. I do not need to talk to you. Why would
-    I need to talk to you, exactly?
-  - Oh, mother sent you? You think that makes you special, huh? Well, guess what.
-    You better be real careful around here, son.
-  - "If I find you hurt any of them, you\u2019ll taste my wrath. What are you doing?
-    Don\u2019t laugh. I'm dead serious. Now, take me back, before I change my mind."
+  _name: JAX
+  _dialogue: {fileID: 11400000, guid: 024cbbf4c12751d4da8a58cd3d6a0ad2, type: 2}
   _flowerType: 6
 --- !u!1001 &309600246145391777
 PrefabInstance:

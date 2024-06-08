@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7bf2318540ba841bf02ab3adfe2f65, type: 3}
+  m_Name: 04 - Fear Dialogue
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogueText: 'Fear is a powerful motivator and can influence your body in many
+      ways. When are you most afraid? '
+    responses:
+    - responseText: Being alone.
+      nextNode:
+        dialogueText: It is a scary thing to be alone, indeed, especially when company
+          is important to you. Do you feel alone right now?
+        responses:
+        - responseText: A little bit.
+          nextNode:
+            dialogueText: 'I am sorry to hear that. Being lonely is a terrible feeling
+              and causes everyone some fear, I think. '
+            responses:
+            - responseText: "Come, I\u2019ll take you back."
+              nextNode:
+                dialogueText: 
+                responses: []
+        - responseText: Not really, no.
+          nextNode:
+            dialogueText: "That is good to hear. While it is nice to be alone, I
+              don\u2019t think we like to feel alone."
+            responses:
+            - responseText: "Come, I\u2019ll take you back."
+              nextNode:
+                dialogueText: 
+                responses: []
+    - responseText: Being in company.
+      nextNode:
+        dialogueText: 'The fear of judgment is a weird thing. It seems our instincts
+          have not quite been able to evolve out of that prehistoric trait. '
+        responses:
+        - responseText: "Come, I\u2019ll take you back."
+          nextNode:
+            dialogueText: 
+            responses: []
