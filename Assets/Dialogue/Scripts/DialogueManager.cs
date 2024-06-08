@@ -31,41 +31,32 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Transform _responseButtonParent;
     [SerializeField] private GameObject _responseButtonPrefab;
 
-    // Events
     public event Action DialogueStarted;
     public event Action DialogueEnded;
 
-    // Starts the dialogue with given title and dialogue node
     public void StartDialogue(string title, DialogueNode node)
     {
         ShowDialogue();
         OnDialogueStarted();
 
-        // Set dialogue title and body text
         _dialogueNameText.text = title;
         _dialogueMessageText.text = node.dialogueText;
 
-        // Remove any existing response buttons
         foreach (Transform child in _responseButtonParent)
         {
             Destroy(child.gameObject);
         }
 
-        // Create and setup response buttons based on current dialogue node
         foreach (DialogueResponse response in node.responses)
         {
             GameObject buttonObj = Instantiate(_responseButtonPrefab, _responseButtonParent);
             buttonObj.GetComponentInChildren<TextMeshProUGUI>().text = response.responseText;
-
-            // Setup button to trigger SelectResponse when clicked
             buttonObj.GetComponent<Button>().onClick.AddListener(() => SelectResponse(response, title));
         }
     }
 
-    // Handles response selection and triggers next dialogue node
     public void SelectResponse(DialogueResponse response, string title)
     {
-        // Check if there's a follow-up node
         if (!response.nextNode.IsLastNode())
         {
             StartDialogue(title, response.nextNode); 

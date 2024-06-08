@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2481026207645404103}
   - component: {fileID: 7118122800507230509}
   - component: {fileID: 7991937738382365358}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: 04 - Fear Flower
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -133,6 +133,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 039420571347cbc4fa59be982594cf61, type: 3}
       propertyPath: m_Name
       value: FlowerFear
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 039420571347cbc4fa59be982594cf61, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2496139233410834661}
   - component: {fileID: 7720083798504816853}
   - component: {fileID: 6633139419332914948}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,14 +157,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 034841d2eb6c0d64a81ea7146740b239, type: 2}
+    - target: {fileID: -7357938763102626505, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -7198047800998509995, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bd151f5452b5f4e408ae473cc60e2ddf, type: 2}
+    - target: {fileID: -5961842690325193546, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -5920473278583639691, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6a90af0cebdf2cb49908cc65595e64b5, type: 2}
+    - target: {fileID: -3728542431602749047, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -2834361012973986627, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -177,6 +189,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmotionFlower
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850476199155303914, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273330369503822658, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3293504697591807413, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -185,6 +209,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dab096a7c3753c447adb2f98f67d8457, type: 2}
+    - target: {fileID: 7261850219252462509, guid: da9781bf1ef29404eb964eae9c021447, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,18 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 using UnityEngine;
 
 public class VideoManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private VideoPlayer videoPlayer;
+
+    private void Start()
     {
-        
+        videoPlayer = GetComponent<VideoPlayer>();
+
+        if (videoPlayer != null)
+        {
+            videoPlayer.loopPointReached += OnVideoFinished;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadNextScene();
+        }
+    }
+
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        LoadNextScene();
+    }
+
+    private void LoadNextScene()
+    {
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        SceneManager.LoadScene(sceneIndex + 1);    
     }
 }

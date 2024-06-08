@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1178754087046129880}
   - component: {fileID: 2702308273116098382}
   - component: {fileID: 6525245567391141284}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: 03 - Pride Flower
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -137,6 +137,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e3e30cd3479655148aab93409f5317ae, type: 3}
       propertyPath: m_Name
       value: FlowerPride
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3e30cd3479655148aab93409f5317ae, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

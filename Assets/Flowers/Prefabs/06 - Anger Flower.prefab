@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 870452264519736343}
   - component: {fileID: 7646854087909231232}
   - component: {fileID: 1771280676709089221}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: 06 - Anger Flower
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -129,6 +129,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 285eb972b2b3e8a4092679b0268e2671, type: 3}
       propertyPath: m_Name
       value: FlowerAnger
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 285eb972b2b3e8a4092679b0268e2671, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

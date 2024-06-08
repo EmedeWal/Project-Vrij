@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7398459267400602556}
   - component: {fileID: 3963250490240435830}
   - component: {fileID: 1791999655613667173}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: 02 - Joy Flower
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -129,6 +129,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e029fefd3ec08ef449c032736073ccb1, type: 3}
       propertyPath: m_Name
       value: FlowerJoy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e029fefd3ec08ef449c032736073ccb1, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
