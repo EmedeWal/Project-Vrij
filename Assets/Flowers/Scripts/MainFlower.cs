@@ -1,13 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class MainFlower : Actor
 {
     [Header("FLOWER TYPE")]
     [SerializeField] private FlowerType _flowerType;
 
-    [Header("FLOWER PETALS")]
-    [SerializeField] private GameObject[] _petals;
+    [Header("PETALS")]
+    [SerializeField] private GameObject[] _tornPetals;
+    [SerializeField] private GameObject[] _restoredPetals;
 
     [Header("FLOWER UNIQUE DIALOGUE")]
     [SerializeField] private Dialogue[] _dialogues;
@@ -15,11 +17,21 @@ public class MainFlower : Actor
     [Header("FINAL DIALOGUE")]
     [SerializeField] private Dialogue _finalDialogue;
 
+    [Header("FINAL MUSIC")]
+    [SerializeField] private AudioClip _finalClip;
+    [SerializeField] private float _finalVolume;
+
     private List<FlowerType> _collectedFlowers = new List<FlowerType>();
 
-    private void Start()
+    public delegate void MainFlower_FlowerCollected();
+    public static event MainFlower_FlowerCollected FlowerCollected;
+
+    private void Awake()
     {
-        foreach (var item in _petals) item.SetActive(false);
+        foreach (var item in _restoredPetals)
+        {
+            item.SetActive(false);
+        }
     }
 
     private void HandleFlowerCollection(FlowerType flowerType)
@@ -58,7 +70,8 @@ public class MainFlower : Actor
     private void CollectFlower(FlowerType flowerType, int petalIndex, Dialogue dialogue)
     {
         _collectedFlowers.Add(flowerType);
-        _petals[petalIndex].SetActive(true);
+        _restoredPetals[petalIndex].SetActive(true);
+        _tornPetals[petalIndex].SetActive(false);
         UpdateDialogue(dialogue);
     }
 
@@ -74,6 +87,7 @@ public class MainFlower : Actor
             HandleFlowerCollection(PlayerInventory.Instance.GetFlowerType());
             PlayerInventory.Instance.SetFlowerType(FlowerType.None);
             MainFlower_DialogueStarted();
+            OnFlowerCollected();
         }
     }
 
@@ -98,10 +112,16 @@ public class MainFlower : Actor
             else
             {
                 GameManager.Instance.SetGameState(GameManager.GameState.End);
+                AudioManager.Instance.SetNewAudioClip(_finalClip, _finalVolume);
             }
 
             UpdateDialogue(_finalDialogue);
             MainFlower_DialogueStarted();
         }
+    }
+
+    private void OnFlowerCollected()
+    {
+        FlowerCollected?.Invoke();
     }
 }

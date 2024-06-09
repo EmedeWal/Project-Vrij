@@ -775,7 +775,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "EDEN'S \nREFUGE"
+  m_text: "EDEN'S \nPEACE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6ec9d5397e843f146b9a85b0e2c4e009, type: 2}
   m_sharedMaterial: {fileID: 5828173579704517663, guid: 6ec9d5397e843f146b9a85b0e2c4e009, type: 2}

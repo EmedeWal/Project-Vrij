@@ -6,11 +6,12 @@ public class PlayerMouseMove : MonoBehaviour
 {
     private PlayerInputManager _inputManager;
     private NavMeshAgent _agent;
-
+    private Animator _animator;
     private void Awake()
     {
         _inputManager = GetComponent<PlayerInputManager>();
         _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void OnEnable()
@@ -80,10 +81,12 @@ public class PlayerMouseMove : MonoBehaviour
     private void StartAgent()
     {
         _agent.isStopped = false;
+        _animator.SetBool("Is Moving", true);
     }
 
     private void StopAgent()
     {
         _agent.isStopped = true;
+        _animator.SetBool("Is Moving", false);
     }
 }

@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class FlowerEffects : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _effects;
+    private FlowerEffect[] _flowerEffects;
 
     private void Start()
     {
+        _flowerEffects = GetComponentsInChildren<FlowerEffect>();
         DisableEffects();
     }
 
@@ -23,47 +24,42 @@ public class FlowerEffects : MonoBehaviour
     {
         switch (flowerType)
         {
-            case FlowerType.None:
-                break;
-
             case FlowerType.Love:
                 EnableEffect(0);
                 break;
 
             case FlowerType.Joy:
-
-                break;
-
-            case FlowerType.Pride:
-
-                break;
-
-            case FlowerType.Fear:
-
-                break;
-
-            case FlowerType.Sadness:
                 EnableEffect(1);
                 break;
 
-            case FlowerType.Anger:
+            case FlowerType.Pride:
+                EnableEffect(2);
+                break;
 
+            case FlowerType.Fear:
+                EnableEffect(3);
+                break;
+
+            case FlowerType.Sadness:
+                EnableEffect(4);
+                break;
+
+            case FlowerType.Anger:
+                EnableEffect(5);
                 break;
         }
     }
 
     private void EnableEffect(int position)
     {
-        DisableEffects();
-
-        _effects[position].SetActive(true);
+        _flowerEffects[position].Activate();
     }
 
     private void DisableEffects()
     {
-        foreach (var icon in _effects)
+        foreach (var effect in _flowerEffects)
         {
-            icon.SetActive(false);
+            effect.Deactivate();
         }
     }
 }
