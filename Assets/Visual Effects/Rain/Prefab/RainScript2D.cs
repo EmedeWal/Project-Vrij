@@ -167,9 +167,9 @@ namespace DigitalRuby.RainMaker
             }
         }
 
-        protected override void Start()
+        protected override void Awake()
         {
-            base.Start();
+            base.Awake();
 
             initialEmissionRain = RainFallParticleSystem.emission.rateOverTime.constant;
             initialStartSpeedRain = new Vector2(RainFallParticleSystem.main.startSpeed.constantMin, RainFallParticleSystem.main.startSpeed.constantMax);
@@ -191,6 +191,11 @@ namespace DigitalRuby.RainMaker
         protected override void Update()
         {
             base.Update();
+
+            if (FollowCamera)
+            {
+                transform.position = Target.transform.position;
+            }
 
             cameraMultiplier = (Camera.orthographicSize * 0.25f);
             visibleBounds.min = Camera.main.ViewportToWorldPoint(Vector3.zero);

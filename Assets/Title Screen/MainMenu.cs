@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene("Botanical Garden");
+        SceneManager.LoadScene("Intro");
     }
 
     public void Credits()

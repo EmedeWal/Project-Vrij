@@ -1,3 +1,4 @@
+using DigitalRuby.RainMaker;
 using UnityEngine;
 
 public class SadnessFlowerEffect : FlowerEffect
@@ -8,12 +9,12 @@ public class SadnessFlowerEffect : FlowerEffect
     public override void Activate()
     {
         base.Activate();
-        _rainEffect.SetActive(true);
+        _rainEffect.GetComponent<RainScript2D>().RainIntensity = 1f;
     }
 
     public override void Deactivate()
     {
         base.Deactivate();
-        _rainEffect.SetActive(false);
+        _rainEffect.GetComponent<RainScript2D>().RainIntensity = 0f;
     }
 }

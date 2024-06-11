@@ -23,9 +23,9 @@ public class CameraShake : MonoBehaviour
 
     private Vector3 originalPosition;
 
-    public void StartCameraShake(float shakeMagnitude)
+    public void StartCameraShake(float shakeMagnitude, float frequency)
     {
-        StartCoroutine(CameraShakeCoroutine(shakeMagnitude));
+        StartCoroutine(CameraShakeCoroutine(shakeMagnitude, frequency));
     }
 
     public void StopCameraShake()
@@ -34,12 +34,12 @@ public class CameraShake : MonoBehaviour
         transform.localPosition = originalPosition;
     }
 
-    private IEnumerator CameraShakeCoroutine(float shakeMagnitude)
+    private IEnumerator CameraShakeCoroutine(float shakeMagnitude, float frequency)
     {
         while (true)
         {
             Vector3 randomPoint = originalPosition + Random.insideUnitSphere * shakeMagnitude;
-            transform.localPosition = new Vector3(randomPoint.x, randomPoint.y, originalPosition.z);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, randomPoint, Time.deltaTime * frequency);
 
             yield return null;
         }

@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class PrideFlowerEffect : FlowerEffect
 {
-    [Header("SCREEN")]
+    [Header("BLOOM")]
     [SerializeField] PostProcessVolume _postProcessVolume;
+    [SerializeField] private float _bloomIntensity = 25f;
     private Bloom _bloom;
 
     private void Start()
@@ -15,7 +16,7 @@ public class PrideFlowerEffect : FlowerEffect
     public override void Activate()
     {
         base.Activate();
-        _bloom.intensity.value = 10.0f;
+        _bloom.intensity.value = _bloomIntensity;
     }
 
     public override void Deactivate() 

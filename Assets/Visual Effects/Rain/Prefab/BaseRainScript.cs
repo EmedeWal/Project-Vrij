@@ -18,6 +18,8 @@ namespace DigitalRuby.RainMaker
         [Tooltip("Camera the rain should hover over, defaults to main camera")]
         public Camera Camera;
 
+        public Transform Target;
+
         [Tooltip("Whether rain should follow the camera. If false, rain must be moved manually and will not follow the camera.")]
         public bool FollowCamera = true;
 
@@ -85,14 +87,15 @@ namespace DigitalRuby.RainMaker
             if (EnableWind && WindZone != null && WindSpeedRange.y > 1.0f)
             {
                 WindZone.gameObject.SetActive(true);
-                if (FollowCamera)
-                {
-                    WindZone.transform.position = Camera.transform.position;
-                }
-                if (!Camera.orthographic)
-                {
-                    WindZone.transform.Translate(0.0f, WindZone.radius, 0.0f);
-                }
+                //if (FollowCamera)
+                //{
+                //    WindZone.transform.position = Camera.transform.position;
+                //}
+                //if (!Camera.orthographic)
+                //{
+                //    WindZone.transform.Translate(0.0f, WindZone.radius, 0.0f);
+                //}
+
                 if (nextWindTime < Time.time)
                 {
                     WindZone.windMain = UnityEngine.Random.Range(WindSpeedRange.x, WindSpeedRange.y);
@@ -106,6 +109,7 @@ namespace DigitalRuby.RainMaker
                     {
                         WindZone.transform.rotation = Quaternion.Euler(UnityEngine.Random.Range(-30.0f, 30.0f), UnityEngine.Random.Range(0.0f, 360.0f), 0.0f);
                     }
+
                     nextWindTime = Time.time + UnityEngine.Random.Range(WindChangeInterval.x, WindChangeInterval.y);
                     audioSourceWind.Play((WindZone.windMain / WindSpeedRange.z) * WindSoundVolumeModifier);
                 }
@@ -211,7 +215,7 @@ namespace DigitalRuby.RainMaker
             }
         }
 
-        protected virtual void Start()
+        protected virtual void Awake()
         {
 
 #if DEBUG
