@@ -1638,9 +1638,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1404245008999002100, guid: ea8d62ad586d63e4cbcd298f8a3e9e86, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1806722298}
-    - targetCorrespondingSourceObject: {fileID: 1404245008999002100, guid: ea8d62ad586d63e4cbcd298f8a3e9e86, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1806722297}
   m_SourcePrefab: {fileID: 100100000, guid: ea8d62ad586d63e4cbcd298f8a3e9e86, type: 3}
 --- !u!1 &1806722295 stripped
 GameObject:
@@ -1652,18 +1649,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 979901640950460049, guid: ea8d62ad586d63e4cbcd298f8a3e9e86, type: 3}
   m_PrefabInstance: {fileID: 1806722294}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1806722297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806722295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d93986467fe598747a676b9f60659a2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1806722298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1952,6 +1937,10 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 845464715}
+    - target: {fileID: 5866906163564026764, guid: 291e40914a4305f4dbc5f3b0aa37d836, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8666286843427845184, guid: 291e40914a4305f4dbc5f3b0aa37d836, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
