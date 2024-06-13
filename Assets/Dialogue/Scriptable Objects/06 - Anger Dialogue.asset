@@ -13,26 +13,57 @@ MonoBehaviour:
   m_Name: 06 - Anger Dialogue
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: I feel like I could just about explode right now. Be careful not
-      to bug me right now. Have you ever reached such a point?
+    dialogueText: '[Jax remains silent]'
     responses:
-    - responseText: Sometimes.
+    - responseText: 'Hello, Jax. '
       nextNode:
-        dialogueText: 'You might want to consider dealing with feelings of anger
-          earlier on, or you are gonna look much like me. Take me back to mother,
-          before I say things I am going to regret. '
+        dialogueText: "And who told you you were allowed to speak, huh? You must
+          really introduce me to him, because I can\u2019t see him anywhere!"
         responses:
-        - responseText: "Okay\u2026"
+        - responseText: Bad day, huh?
           nextNode:
-            dialogueText: 
-            responses: []
-    - responseText: 'Never. '
-      nextNode:
-        dialogueText: Please write a book on how you manage it. I could really use
-          some advice on this matter. Now, take me back to mother, before I say things
-          I am going to regret.
-        responses:
-        - responseText: "Okay\u2026"
+            dialogueText: "Bad day? How ignorant. I would beat you up, but I can\u2019t,
+              because I am a ****** FLOWER! I don\u2019t even have limbs!"
+            responses:
+            - responseText: Have you tried counting to ten?
+              nextNode:
+                dialogueText: "Hello everyone, Einstein has come to bless us with
+                  his holy presence! Please, never give your advice ever again. I\u2019m
+                  afraid that humanity is not ready to handle your infinite wisdom."
+                responses:
+                - responseText: Jeez, you should go to therapy.
+                  nextNode:
+                    dialogueText: "Therapy can kiss my buttocks! My therapy is shouting
+                      and insulting buffoons like you. I will call you \u201Cbuffoon\u201D
+                      now. Now, \u201Cbuffoon\u201D, take me back to mother, or you\u2019ll
+                      incur my wrath. "
+                    responses:
+                    - responseText: '[Fearing for your life, take Jax back]'
+                      nextNode:
+                        dialogueText: 
+            - responseText: "That\u2019s rough, buddy."
+              nextNode:
+                dialogueText: "Buddy? BUDDY?! We are not \u201Cbuddies\u201D, you
+                  buffoon. I will call you buffoon now, because I do whatever I want.
+                  Now, \u201Cbuffoon\u201D, take me back to mother, or you\u2019ll
+                  incur my wrath. "
+                responses:
+                - responseText: '[Fearing for your life, take Jax back]'
+                  nextNode:
+                    dialogueText: 
+                    responses: []
+        - responseText: What on earth is your deal?
           nextNode:
-            dialogueText: 
-            responses: []
+            dialogueText: What is my deal? I am angry! No, furious! No, exasperated!
+              No, rabid! No, infuriated! No, livid! No, apoplectic even!
+            responses:
+            - responseText: What even happened to you?
+              nextNode:
+                dialogueText: "Stop asking me questions, they make me incensed. Instead,
+                  I\u2019ll give you orders. Take me back to mother, right now, or
+                  you\u2019ll incur my righteous wrath."
+                responses:
+                - responseText: '[Fearing for your life, take Jax back]'
+                  nextNode:
+                    dialogueText: 
+                    responses: []

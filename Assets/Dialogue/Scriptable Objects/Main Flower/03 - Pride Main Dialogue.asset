@@ -13,10 +13,26 @@ MonoBehaviour:
   m_Name: 03 - Pride Main Dialogue
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: My little devil. Hard work, raising him, but I could not be more
-      happy about the way he turned out.
+    dialogueText: A proud and stout fellow, never too bad to boast. Tell me, Eden,
+      who are you hoping to turn proud with your career?
     responses:
-    - responseText: '[CONTINUE]'
+    - responseText: My family.
       nextNode:
-        dialogueText: 
-        responses: []
+        dialogueText: "I don\u2019t think they will ever be proud of you until you
+          are, Eden. they might not realize it now, but they want you to be proud
+          and happy. This job will not bring you that."
+        responses:
+        - responseText: I need to think about it.
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: Myself.
+      nextNode:
+        dialogueText: It seems you believe that true pride comes from any achievement,
+          regardless of its source. This job will not make you proud, Eden. It is
+          time to face that.
+        responses:
+        - responseText: I need to think about it.
+          nextNode:
+            dialogueText: 
+            responses: []

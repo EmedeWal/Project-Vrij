@@ -14,9 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogueText: "Never afraid to fight, this one. Didn\u2019t make him many friends,
-      but his enemies know better than to mess with him."
+      but his enemies know better than to mess with him. Tell me, Eden, do you ever
+      allow yourself to get angry?"
     responses:
-    - responseText: '[CONTINUE]'
+    - responseText: I do not like conflicts.
       nextNode:
-        dialogueText: 
-        responses: []
+        dialogueText: And thus, you tell everyone yes. You do not respect yourself,
+          and others follow your example. Allow yourself to stand tall, Eden.
+        responses:
+        - responseText: "I\u2019ll think about it."
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: I do not want to offend people.
+      nextNode:
+        dialogueText: And thus, you tell everyone yes. You do not respect yourself,
+          and others follow your example. Allow yourself to stand tall, Eden.
+        responses:
+        - responseText: "I\u2019ll think about it."
+          nextNode:
+            dialogueText: 
+            responses: []

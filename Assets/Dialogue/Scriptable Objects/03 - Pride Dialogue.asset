@@ -13,55 +13,49 @@ MonoBehaviour:
   m_Name: 03 - Pride Dialogue
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: What makes you feel proud and satisfied with yourself? Your actions
-      and deeds, or your achievements?
+    dialogueText: Ah, a visitor! Behold, you stand before the epitome of excellence!
+      What brings you to bask in my glorious presence?
     responses:
-    - responseText: Being good.
+    - responseText: "Don\u2019t you know no one likes a bragger?"
       nextNode:
-        dialogueText: That does not explain your choice of career. You spend more
-          time making money than making anyone happy. If you want to feel proud,
-          maybe you should consider switching careers.
+        dialogueText: Nonsense! Everyone likes me! Besides, I am not bragging. I
+          am simply proudly conversing the truth about the state of my magnificence!
         responses:
-        - responseText: "I\u2019ll think about it."
+        - responseText: I was blinded by your excellence. Forgive me.
           nextNode:
-            dialogueText: "That\u2019s the spirit. I\u2019m sure you\u2019ll come
-              around eventually."
+            dialogueText: Forgiveness thou has sought and forgiveness thou shalt
+              receive! But tell me, the reason for your visit?
             responses:
-            - responseText: "I\u2019ll take you back."
+            - responseText: 'Mother misses your excellency. '
+              nextNode:
+                dialogueText: 'Ah, such flattery! There is no receiver more fitter
+                  than me! Very well, I shall delight dear mother with my presence. '
+                responses:
+                - responseText: '[Take Orion back to Lumina] '
+                  nextNode:
+                    dialogueText: 
+                    responses: []
+        - responseText: You are truly insufferable.
+          nextNode:
+            dialogueText: Such insults! No wonder thou does not love thyself! Where
+              are your manners? Your respect? You should visit mother right now.
+              She could teach you some decency.
+            responses:
+            - responseText: '[Take Orion back to Lumina] '
               nextNode:
                 dialogueText: 
                 responses: []
-        - responseText: "I don\u2019t have a choice."
-          nextNode:
-            dialogueText: 'I get it. You wanted to make your father proud. However,
-              I bet he is not proud before you are. Just take some time and think
-              about it, okay? '
-            responses:
-            - responseText: "I\u2019ll take you back."
-              nextNode:
-                dialogueText: 
-                responses: []
-    - responseText: Being accomplished.
+    - responseText: Well, you are most impressive indeed.
       nextNode:
-        dialogueText: That would explain your choice of career. However, you do not
-          seem very proud. You might want to consider switching jobs.
+        dialogueText: Thank you dearly, kind stranger. Your ability to state the
+          obvious is unmatched. But tell me, the reason for your visit?
         responses:
-        - responseText: "I\u2019ll think about it."
+        - responseText: 'Mother misses your excellency. '
           nextNode:
-            dialogueText: "That\u2019s the spirit. I\u2019m sure you\u2019ll come
-              around eventually."
+            dialogueText: Ah, such flattery! There is no receiver more fitter than
+              me! Very well, I shall delight dear mother with my presence.
             responses:
-            - responseText: "I\u2019ll take you back."
-              nextNode:
-                dialogueText: 
-                responses: []
-        - responseText: "I don\u2019t have a choice."
-          nextNode:
-            dialogueText: 'I get it. You wanted to make your father proud. However,
-              I bet he is not proud before you are. Just take some time and think
-              about it, okay? '
-            responses:
-            - responseText: "I\u2019ll take you back."
+            - responseText: '[Take Orion back to Lumina]  '
               nextNode:
                 dialogueText: 
                 responses: []

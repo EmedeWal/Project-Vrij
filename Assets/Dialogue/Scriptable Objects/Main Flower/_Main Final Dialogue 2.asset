@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: _Main Final Dialogue 2
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: Thank you so much for this mesmerizing reunion. Even though this
-      family has its problems, we are inseparable, for better or worse.
+    dialogueText: I should thank you, Eden, for this mesmerizing reunion. Even though
+      this family has its problems, we are inseparable, for better or worse.
     responses:
-    - responseText: I understand, now.
+    - responseText: I understand what you are saying.
       nextNode:
         dialogueText: That is wonderful to hear. The next time you feel overwhelmed,
           come visit us again. It would do you some good.
         responses:
-        - responseText: I will, thank you.
+        - responseText: "I\u2019ll keep in touch, I promise."
           nextNode:
             dialogueText: I should be thanking you, sweetheart. The time has come
               for you to be on your own way. Good luck with everything.

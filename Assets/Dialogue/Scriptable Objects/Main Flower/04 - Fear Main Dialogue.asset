@@ -13,10 +13,26 @@ MonoBehaviour:
   m_Name: 04 - Fear Main Dialogue
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: I am surprised you got him to join you. She got seriously hurt
-      once, and has been a little wary since.
+    dialogueText: I am surprised you got her to join you. She had an incident once,
+      and has been terribly afraid ever since. Tell me, Eden, why are you afraid
+      to chase your dreams?
     responses:
-    - responseText: '[CONTINUE]'
+    - responseText: "I\u2019m afraid to disappoint my parents."
       nextNode:
-        dialogueText: 
-        responses: []
+        dialogueText: Eden, this is your life. It is time you start thinking about
+          yourself. Your career is making you unhappy, regardless of what your parents
+          are thinking.
+        responses:
+        - responseText: You might be right.
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: "I\u2019m afraid I won\u2019t succeed."
+      nextNode:
+        dialogueText: Eden, you are too young to give up on your dreams. If you do
+          not at least try, you will always wonder what could have been.
+        responses:
+        - responseText: You might be right.
+          nextNode:
+            dialogueText: 
+            responses: []

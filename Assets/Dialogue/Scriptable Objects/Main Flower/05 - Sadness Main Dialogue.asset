@@ -14,9 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogueText: She can be a little exhausting, but the sun shines much brighter
-      after spending some time with her.
+      after spending some time with her. Tell me, Eden, why do you suppress your
+      tears?
     responses:
-    - responseText: '[CONTINUE]'
+    - responseText: I have to be strong for those around me.
       nextNode:
-        dialogueText: 
-        responses: []
+        dialogueText: No one needs a fake, trust me. Dare to be vulnerable, and your
+          real friends will reveal themselves to you.
+        responses:
+        - responseText: 'You might be right.  '
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: I prefer not to feel sad.
+      nextNode:
+        dialogueText: Suppressing your feelings does not make them leave, Eden. It
+          just means that you will lose contact with all of your emotions, also the
+          positive ones.
+        responses:
+        - responseText: 'You might be right.  '
+          nextNode:
+            dialogueText: 
+            responses: []

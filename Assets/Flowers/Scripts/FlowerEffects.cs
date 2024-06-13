@@ -4,7 +4,7 @@ public class FlowerEffects : MonoBehaviour
 {
     private FlowerEffect[] _flowerEffects;
 
-    private void Start()
+    private void Awake()
     {
         _flowerEffects = GetComponentsInChildren<FlowerEffect>();
         DisableEffects();

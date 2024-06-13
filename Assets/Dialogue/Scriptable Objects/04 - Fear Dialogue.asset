@@ -13,38 +13,40 @@ MonoBehaviour:
   m_Name: 04 - Fear Dialogue
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: 'Fear is a powerful motivator and can influence your body in many
-      ways. When are you most afraid? '
+    dialogueText: "Stay right there! Don\u2019t come any closer! Who are you? Who
+      sent you? Are you out to get me?"
     responses:
-    - responseText: Being alone.
+    - responseText: Your mother misses you.
       nextNode:
-        dialogueText: It is a scary thing to be alone, indeed, especially when company
-          is important to you. Do you feel alone right now?
+        dialogueText: "Mother? You know her? I\u2019m afraid to see her. Maybe she
+          is angry at me for running off. I\u2019d rather stay here."
         responses:
-        - responseText: A little bit.
+        - responseText: She misses you, truly.
           nextNode:
-            dialogueText: 'I am sorry to hear that. Being lonely is a terrible feeling
-              and causes everyone some fear, I think. '
+            dialogueText: "\u2026Really? I want to believe you, I do, but\u2026 I\u2019m
+              scared. I\u2019m scared that I made her worry. I\u2019m scared that
+              I let her down."
             responses:
-            - responseText: "Come, I\u2019ll take you back."
+            - responseText: "That\u2019s okay. Let\u2019s get you back to mother."
+              nextNode:
+                dialogueText: "Mother\u2026 she always makes me feel so safe and
+                  secure. I do miss her very much. Would you take me back? Please? "
+                responses:
+                - responseText: '[Take Mara back to Lumina]'
+                  nextNode:
+                    dialogueText: 
+                    responses: []
+    - responseText: Calm down, you are safe.
+      nextNode:
+        dialogueText: "Calm down? Calm down?? There is nothing to be calm about!
+          Dangers, dangers everywhere! I\u2019m\u2026 I\u2019m afraid."
+        responses:
+        - responseText: "That\u2019s okay. Let\u2019s get you back to mother. "
+          nextNode:
+            dialogueText: "Mother\u2026 she always makes me feel so safe and secure.
+              I do miss her very much. Would you take me back? Please? "
+            responses:
+            - responseText: '[Take Mara back to Lumina]'
               nextNode:
                 dialogueText: 
                 responses: []
-        - responseText: Not really, no.
-          nextNode:
-            dialogueText: "That is good to hear. While it is nice to be alone, I
-              don\u2019t think we like to feel alone."
-            responses:
-            - responseText: "Come, I\u2019ll take you back."
-              nextNode:
-                dialogueText: 
-                responses: []
-    - responseText: Being in company.
-      nextNode:
-        dialogueText: 'The fear of judgment is a weird thing. It seems our instincts
-          have not quite been able to evolve out of that prehistoric trait. '
-        responses:
-        - responseText: "Come, I\u2019ll take you back."
-          nextNode:
-            dialogueText: 
-            responses: []

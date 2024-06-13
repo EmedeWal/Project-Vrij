@@ -13,10 +13,27 @@ MonoBehaviour:
   m_Name: 01 - Love Main Dialogue
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: 'I am particularly fond of this one. Even though raising her was
-      not always easy, I was happy to carry the burden. '
+    dialogueText: "I am particularly fond of this one. Even though raising her was
+      not always easy, I was happy to carry the burden. Tell me, Eden, why don\u2019t
+      you love yourself?"
     responses:
-    - responseText: '[Continue]'
+    - responseText: I regret my choices in life.
       nextNode:
-        dialogueText: 
-        responses: []
+        dialogueText: You cannot change what has happened and it serves no one to
+          beat yourself up over them. Look to the future, to what you can change.
+          There is hope for you, truly.
+        responses:
+        - responseText: Thank you for the advice.
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: "I don\u2019t think I deserve to. "
+      nextNode:
+        dialogueText: "Eden, you can\u2019t hope to carry the burdens of life without
+          loving yourself. Do not look elsewhere for this approval: it\u2019s right
+          there. "
+        responses:
+        - responseText: Thank you for the advice.
+          nextNode:
+            dialogueText: 
+            responses: []

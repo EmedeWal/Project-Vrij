@@ -13,33 +13,39 @@ MonoBehaviour:
   m_Name: 02 - Joy Dialogue
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: 'How do you enjoy spending your time? Being with the ones you love,
-      or dedicating yourself to your passions? '
+    dialogueText: Welcome, welcome! The sun shines brighter with your arrival! What
+      delightful adventure do you bring to my door?
     responses:
-    - responseText: Spending time with loved ones.
+    - responseText: Well, thank you! Your mother misses you.
       nextNode:
-        dialogueText: Having people in your life that you can share the experience
-          with is truly one of the joys of life.
+        dialogueText: Oh, how wonderful to be missed! Her heart must be heavy without
+          my laughter. Alright, take me back! I shall rekindle the flames of joy!
         responses:
-        - responseText: 'Your mother is looking for you. '
+        - responseText: ' [Take Jovie back to Lumina] '
           nextNode:
-            dialogueText: "Ah, I\u2019d love to see her again. Would you take me? "
+            dialogueText: 
+            responses: []
+    - responseText: 'Whatever happened to you? '
+      nextNode:
+        dialogueText: 'How so? Is it not natural to celebrate life? To be thankful
+          for each wonderful moment? For each breath of air? '
+        responses:
+        - responseText: "I suppose so. Let\u2019s take you back."
+          nextNode:
+            dialogueText: "Fear not, doubt not, my dear friend! Happiness will triumph,
+              even for those in the dark! Let\u2019s spread my joy to the others!"
             responses:
-            - responseText: Of course.
+            - responseText: '[Take Jovie back to Lumina]'
               nextNode:
                 dialogueText: 
                 responses: []
-    - responseText: 'Dedicating myself to my passions. '
-      nextNode:
-        dialogueText: 'That is a wonderful thing indeed. There are little investments
-          as worthy of your time as being occupied with something that gives you
-          joy. '
-        responses:
-        - responseText: 'Your mother is looking for you. '
+        - responseText: "[Scoff] Sure. Let\u2019s take you back."
           nextNode:
-            dialogueText: "Ah, I\u2019d love to see her again. Would you take me? "
+            dialogueText: Happiness is not to be trifled with or laughed at, young
+              man! Beware the seed of bitterness. Quickly, take me back before it
+              should infect the others!
             responses:
-            - responseText: Of course.
+            - responseText: '[Take Jovie back to Lumina]'
               nextNode:
                 dialogueText: 
                 responses: []

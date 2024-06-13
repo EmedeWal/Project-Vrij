@@ -14,9 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogueText: Always a cheery little fellow. Often, it was the little moments
-      that put a smile on my face.
+      that put a smile on my face. Tell me, Eden, what do you enjoy?
     responses:
-    - responseText: '[CONTINUE]'
+    - responseText: Spending time with other people.
       nextNode:
-        dialogueText: 
-        responses: []
+        dialogueText: However, it seems to me that you have no time or energy to
+          spend. You are always working, and never living. When are you going to
+          take some time to do something that makes you happy?
+        responses:
+        - responseText: "I don\u2019t know. It has been too long, indeed."
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: Spending time on my passions.
+      nextNode:
+        dialogueText: However, it seems to me that you have no time or energy to
+          spend. You are always working, and never living. When are you going to
+          take some time to do something that makes you happy?
+        responses:
+        - responseText: "I don\u2019t know. It has been too long, indeed."
+          nextNode:
+            dialogueText: 
+            responses: []

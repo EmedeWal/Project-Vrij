@@ -268,6 +268,7 @@ MonoBehaviour:
   _audioClip: {fileID: 8300000, guid: fba599e83d3db404e9509fda2f6f967e, type: 3}
   _volume: 0.2
   _postProcessVolume: {fileID: 3594617609732847613}
+  _bloomIntensity: 25
 --- !u!1 &3297395619510357213
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +740,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 43c9f1fcd965b324fadf0fcfad4b9286, type: 3}
   _volume: 1
-  _shakeMagnitude: 0.1
+  _shakeMagnitude: 0.5
+  _shakeFrequency: 5
 --- !u!1001 &5866906163564146898
 PrefabInstance:
   m_ObjectHideFlags: 0

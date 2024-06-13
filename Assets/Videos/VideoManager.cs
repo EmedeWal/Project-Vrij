@@ -6,14 +6,15 @@ public class VideoManager : MonoBehaviour
 {
     private VideoPlayer videoPlayer;
 
-    private void Start()
+    private void Awake()
     {
         videoPlayer = GetComponent<VideoPlayer>();
+    }
 
-        if (videoPlayer != null)
-        {
-            videoPlayer.loopPointReached += OnVideoFinished;
-        }
+    private void Start()
+    {
+        Cursor.visible = false;
+        videoPlayer.loopPointReached += OnVideoFinished;
     }
 
     private void Update()
@@ -31,6 +32,8 @@ public class VideoManager : MonoBehaviour
 
     private void LoadNextScene()
     {
+        Cursor.visible = true;
+
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         SceneManager.LoadScene(sceneIndex + 1);    

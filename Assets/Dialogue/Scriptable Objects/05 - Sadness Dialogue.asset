@@ -13,52 +13,32 @@ MonoBehaviour:
   m_Name: 05 - Sadness Dialogue
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: Not much has been going my way lately. I feel a little overwhelmed.
-      How would you deal with that feeling?
+    dialogueText: "[Isolde cries] \u2026 Hello there. As you can see, I\u2019m in
+      quite a pickle. Not much is going my way and the world is blue. I don\u2019t
+      think I like any of this very much. "
     responses:
-    - responseText: I would keep it together.
+    - responseText: "What\u2019s got you so down? "
       nextNode:
-        dialogueText: 'Really? That seems difficult. Is there any particular reason
-          for the way you deal with misfortune? '
+        dialogueText: "I don\u2019t know. Everything, I guess. Life is just not for
+          me. It beats me down and down and I don\u2019t feel like getting back up."
         responses:
-        - responseText: "I don\u2019t want to be a burden."
+        - responseText: 'Just look at the bright side of life!  '
           nextNode:
-            dialogueText: I recognize that feeling, but it is important to remember
-              that if we are a burden to our friends when we need them, they might
-              not be the best of friends.
+            dialogueText: "Which \u201CBrIgHt SiDe\u201D? All I see is grief and
+              tears. Such terrible advice. This makes me feel even worse. I really
+              want to see mother now. Unlike you, she knows how to comfort me."
             responses:
-            - responseText: "I don\u2019t know."
+            - responseText: '[Take Isolde back to Lumina] '
               nextNode:
-                dialogueText: "That\u2019s okay. Sometimes you just need some time
-                  to figure everything out. Could you take me back to mother? I miss
-                  her."
-                responses:
-                - responseText: Of course.
-                  nextNode:
-                    dialogueText: 
-                    responses: []
-        - responseText: "It\u2019s just not like me to cry."
+                dialogueText: 
+                responses: []
+        - responseText: I sympathize, but you need to go back.
           nextNode:
-            dialogueText: "I simply don\u2019t believe that. All of us can cry. Sadness
-              is an emotion like any other. By blocking it out, you could block out
-              Joy and Love, too."
+            dialogueText: Life is filled with things I have to do. I barely have
+              a choice in the matter. What a tragedy this is. Could you take me back
+              to mother? She always knows how to comfort me.
             responses:
-            - responseText: "I don\u2019t know."
+            - responseText: '[Take Isolde back to Lumina] '
               nextNode:
-                dialogueText: "That\u2019s okay. Sometimes you just need some time
-                  to figure everything out. Could you take me back to mother? I miss
-                  her."
-                responses:
-                - responseText: Of course.
-                  nextNode:
-                    dialogueText: 
-                    responses: []
-    - responseText: I would let it out.
-      nextNode:
-        dialogueText: "I think you are really brave for daring to be vulnerable.
-          You can\u2019t heal by ignoring and you can\u2019t be helped by being invisible. "
-        responses:
-        - responseText: "Let\u2019s take you to your mother."
-          nextNode:
-            dialogueText: 
-            responses: []
+                dialogueText: 
+                responses: []
