@@ -4,12 +4,6 @@ public class FlowerEffects : MonoBehaviour
 {
     private FlowerEffect[] _flowerEffects;
 
-    private void Awake()
-    {
-        _flowerEffects = GetComponentsInChildren<FlowerEffect>();
-        DisableEffects();
-    }
-
     private void OnEnable()
     {
         Flower.UpdateFlowerType += FlowerEffects_UpdateFlowerType;
@@ -18,6 +12,12 @@ public class FlowerEffects : MonoBehaviour
     private void OnDisable()
     {
         Flower.UpdateFlowerType -= FlowerEffects_UpdateFlowerType;
+    }
+
+    public void Initialize()
+    {
+        _flowerEffects = GetComponentsInChildren<FlowerEffect>();
+        DisableEffects();
     }
 
     private void FlowerEffects_UpdateFlowerType(FlowerType flowerType)

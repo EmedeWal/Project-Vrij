@@ -8,7 +8,7 @@ public class PrideFlowerEffect : FlowerEffect
     [SerializeField] private float _bloomIntensity = 25f;
     private Bloom _bloom;
 
-    private void Start()
+    private void Awake()
     {
         _postProcessVolume.profile.TryGetSettings(out _bloom);
     }

@@ -30,6 +30,13 @@ public class GameManager : MonoBehaviour
     private GameState _gameState;
     #endregion
 
+    [SerializeField] private FlowerEffects _flowerEffects;
+
+    private void Start()
+    {
+        _flowerEffects.Initialize();
+    }
+
     public void SetGameState(GameState newState)
     {
         _gameState = newState;

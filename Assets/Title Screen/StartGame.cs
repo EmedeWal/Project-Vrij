@@ -1,6 +1,6 @@
 using System.Collections;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 using TMPro;
 
 public class StartGame : MonoBehaviour
@@ -21,17 +21,12 @@ public class StartGame : MonoBehaviour
         _button = GetComponent<Button>();
         _image = GetComponent<Image>();
 
-        if (_button != null)
-        {
-            _button.onClick.AddListener(StartTheGame);
-        }
-
         _mainMenu.SetActive(false);
     }
 
     public void StartTheGame()
     {
-        Destroy(_button);
+        _button.enabled = false;
         StartCoroutine(MakeImageTransparentCoroutine());
         StartCoroutine(RepositionAndShrinkTitleCoroutine());
     }
@@ -39,7 +34,7 @@ public class StartGame : MonoBehaviour
     private IEnumerator MakeImageTransparentCoroutine()
     {
         Color imageColor = _image.color;
-        float duration = 5.0f; 
+        float duration = 3.0f; 
         float elapsedTime = 0.0f;
 
         while (elapsedTime < duration)
@@ -59,7 +54,7 @@ public class StartGame : MonoBehaviour
         Vector3 endPos = _targetTransform.anchoredPosition;
         float startSize = _titleText.fontSize;
         float endSize = startSize * 0.5f; 
-        float duration = 5.0f; 
+        float duration = 3.0f; 
         float elapsedTime = 0.0f;
 
         while (elapsedTime < duration)

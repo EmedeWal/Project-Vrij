@@ -13,57 +13,54 @@ MonoBehaviour:
   m_Name: 06 - Anger Dialogue
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: '[Jax remains silent]'
+    dialogueText: "And who told you you were allowed to speak, huh? You must really
+      introduce me to him, because I can\u2019t see him anywhere!"
     responses:
-    - responseText: 'Hello, Jax. '
+    - responseText: What on earth is your deal?
       nextNode:
-        dialogueText: "And who told you you were allowed to speak, huh? You must
-          really introduce me to him, because I can\u2019t see him anywhere!"
+        dialogueText: What is my deal? I am angry! No, furious! No, exasperated!
+          No, rabid! No, infuriated! No, livid! No, apoplectic even!
         responses:
-        - responseText: Bad day, huh?
+        - responseText: What even happened to you?
           nextNode:
-            dialogueText: "Bad day? How ignorant. I would beat you up, but I can\u2019t,
-              because I am a ****** FLOWER! I don\u2019t even have limbs!"
+            dialogueText: "Stop asking me questions, they make me incensed. Instead,
+              I\u2019ll give you orders. Take me back to mother, right now, or you\u2019ll
+              incur my righteous wrath."
             responses:
-            - responseText: Have you tried counting to ten?
+            - responseText: '[Fearing for your life, take Jax back]'
               nextNode:
-                dialogueText: "Hello everyone, Einstein has come to bless us with
-                  his holy presence! Please, never give your advice ever again. I\u2019m
-                  afraid that humanity is not ready to handle your infinite wisdom."
-                responses:
-                - responseText: Jeez, you should go to therapy.
-                  nextNode:
-                    dialogueText: "Therapy can kiss my buttocks! My therapy is shouting
-                      and insulting buffoons like you. I will call you \u201Cbuffoon\u201D
-                      now. Now, \u201Cbuffoon\u201D, take me back to mother, or you\u2019ll
-                      incur my wrath. "
-                    responses:
-                    - responseText: '[Fearing for your life, take Jax back]'
-                      nextNode:
-                        dialogueText: 
-            - responseText: "That\u2019s rough, buddy."
+                dialogueText: 
+                responses: []
+    - responseText: Bad day, huh?
+      nextNode:
+        dialogueText: "Bad day? How ignorant. I would beat you up, but I can\u2019t,
+          because I am a ****** FLOWER! I don\u2019t even have limbs!"
+        responses:
+        - responseText: Have you tried counting to ten?
+          nextNode:
+            dialogueText: "Hello everyone, Einstein has come to bless us with his
+              holy presence! Please, never give your advice ever again. I\u2019m
+              afraid that humanity is not ready to handle your infinite wisdom."
+            responses:
+            - responseText: Jeez, you should go to therapy.
               nextNode:
-                dialogueText: "Buddy? BUDDY?! We are not \u201Cbuddies\u201D, you
-                  buffoon. I will call you buffoon now, because I do whatever I want.
-                  Now, \u201Cbuffoon\u201D, take me back to mother, or you\u2019ll
+                dialogueText: "Therapy can kiss my buttocks! My therapy is shouting
+                  and insulting buffoons like you. I will call you \u201Cbuffoon\u201D
+                  now. Now, \u201Cbuffoon\u201D, take me back to mother, or you\u2019ll
                   incur my wrath. "
                 responses:
                 - responseText: '[Fearing for your life, take Jax back]'
                   nextNode:
                     dialogueText: 
                     responses: []
-        - responseText: What on earth is your deal?
+        - responseText: "That\u2019s rough, buddy."
           nextNode:
-            dialogueText: What is my deal? I am angry! No, furious! No, exasperated!
-              No, rabid! No, infuriated! No, livid! No, apoplectic even!
+            dialogueText: "Buddy? BUDDY?! We are not \u201Cbuddies\u201D, you buffoon.
+              I will call you \u201Cbuffoon\u201D now, because I do whatever I want.
+              Now, \u201Cbuffoon\u201D, take me back to mother, or you\u2019ll incur
+              my wrath. "
             responses:
-            - responseText: What even happened to you?
+            - responseText: '[Fearing for your life, take Jax back]'
               nextNode:
-                dialogueText: "Stop asking me questions, they make me incensed. Instead,
-                  I\u2019ll give you orders. Take me back to mother, right now, or
-                  you\u2019ll incur my righteous wrath."
-                responses:
-                - responseText: '[Fearing for your life, take Jax back]'
-                  nextNode:
-                    dialogueText: 
-                    responses: []
+                dialogueText: 
+                responses: []
