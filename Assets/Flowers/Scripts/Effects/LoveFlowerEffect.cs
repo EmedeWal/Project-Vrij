@@ -3,17 +3,17 @@ using UnityEngine;
 public class LoveFlowerEffect : FlowerEffect
 {
     [Header("SCREEN")]
-    [SerializeField] private GameObject _screenOverlay;
+    [SerializeField] private GameObject _canvas;
 
     public override void Activate()
     {
         base.Activate();
-        _screenOverlay.SetActive(true);
+        _canvas.SetActive(true);
     }
 
     public override void Deactivate()
     {
         base.Deactivate();
-        _screenOverlay.SetActive(false);
+        _canvas.SetActive(false);
     }
 }

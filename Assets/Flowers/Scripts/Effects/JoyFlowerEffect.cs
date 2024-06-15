@@ -2,19 +2,18 @@ using UnityEngine;
 
 public class JoyFlowerEffect : FlowerEffect
 {
-    [Header("LIGHT")]
-    [SerializeField] private Color _lightColor;
-    [SerializeField] private float _lightIntensity;
+    [Header("SCREEN")]
+    [SerializeField] private GameObject _canvas;
 
     public override void Activate()
     {
         base.Activate();
-        LightManager.Instance.SetLightColorAndIntensity(_lightColor, _lightIntensity);
+        _canvas.SetActive(true);
     }
 
     public override void Deactivate()
     {
-        base .Deactivate();
-        LightManager.Instance.RevertLightColorAndIntensity();
+        base.Deactivate();
+        _canvas.SetActive(false);
     }
 }

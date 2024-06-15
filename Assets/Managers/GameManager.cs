@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     private GameState _gameState;
     #endregion
 
+    [Header("RFERENCES")]
     [SerializeField] private FlowerEffects _flowerEffects;
 
     private void Start()

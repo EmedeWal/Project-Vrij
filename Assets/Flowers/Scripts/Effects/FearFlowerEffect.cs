@@ -3,17 +3,17 @@ using UnityEngine;
 public class FearFlowerEffect : FlowerEffect
 {
     [Header("SCREEN")]
-    [SerializeField] private GameObject _screenOverlay;
+    [SerializeField] private float _vignetteIntensity = 1;
 
     public override void Activate()
     {
         base.Activate();
-        _screenOverlay.SetActive(true);
+        GlobalVolumeManager.Instance.SetVignetteIntensity(_vignetteIntensity);
     }
 
     public override void Deactivate()
     {
         base.Deactivate();
-        _screenOverlay.SetActive(false);
+        GlobalVolumeManager.Instance.ResetVignetteIntensity();
     }
 }
